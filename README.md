@@ -1,4 +1,4 @@
-# physics-website
+# physics-project
 
 ## Project setup
 ```
