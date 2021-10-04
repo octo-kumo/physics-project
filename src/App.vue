@@ -6,7 +6,6 @@
         dense
         prominent
         fade-img-on-scroll
-        src="https://hbr.org/resources/images/article_assets/2020/09/Sep20_17_975821186.jpg"
         color="dark"
         dark
     >
@@ -18,6 +17,21 @@
         v-model="drawer"
         temporary
     >
+      <v-img
+          width="70%"
+          class="mx-auto my-5"
+          src="@/assets/quantum-computing.png"></v-img>
+      <v-list-item>
+        <v-list-item-content>
+          <v-list-item-title class="text-h6">
+            Quantum Computers
+          </v-list-item-title>
+          <v-list-item-subtitle>
+            and related stuff
+          </v-list-item-subtitle>
+        </v-list-item-content>
+      </v-list-item>
+      <v-divider></v-divider>
       <v-list
           nav
           dense>
@@ -30,6 +44,14 @@
           </v-list-item-title>
         </v-list-item>
       </v-list>
+      <v-footer absolute>
+        <v-switch
+            v-model="$vuetify.theme.dark"
+            inset
+            label="Dark Theme"
+            persistent-hint
+        ></v-switch>
+      </v-footer>
     </v-navigation-drawer>
     <v-main id="main-view">
       <router-view/>
