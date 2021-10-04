@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-scroll="handleScroll">
     <kinesis-container
         event="move">
       <svg
@@ -411,14 +411,6 @@ export default Vue.extend({
         '--current-pos': this.pos * 300
       }
     }
-  },
-
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
   }
 });
 </script>

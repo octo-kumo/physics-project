@@ -1,8 +1,8 @@
 <template>
-  <div>
+  <div v-scroll="handleScroll">
     <kinesis-container
-
-        event="move">
+        duration="0"
+        event="scroll">
       <svg
           xmlns:dc="http://purl.org/dc/elements/1.1/"
           xmlns:cc="http://creativecommons.org/ns#"
@@ -589,7 +589,7 @@
            y="1010.9339"
            id="tspan4372-540"
            style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">+</tspan></text>
-            <kinesis-element tag="g" type="translate" axis="x" strength="100">
+            <kinesis-element tag="g" type="translate" axis="x" strength="200">
               <g
                   transform="translate(10.81759,-67.80558)"
                   id="g4378"
@@ -875,14 +875,6 @@ export default Vue.extend({
         '--current-pos': this.pos * 300
       }
     }
-  },
-
-  mounted() {
-    window.addEventListener('scroll', this.handleScroll);
-  },
-
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.handleScroll);
   }
 });
 </script>
