@@ -53,14 +53,22 @@ History
 
 # Foreword
 
-Before we delve into the topic of quantum computing, we feel that it is important that we bring up the objectives of the article, so that you as the reader will be able to better appreciate what will be covered. The article is written for physics and computer science high school students. Our main goal for the article is:
+Before we delve into the topic of quantum computing:computer:, we feel that it is important that we bring up the objectives of the article, so that you as the reader will be able to better appreciate what will be covered. The article is written for **physics** and **computer science** high school students. Our main goal for the article is:
 
-1. To give the readers a basic understanding of the essence of quantum computers in the most simplistic and intuitive way possible
-2. To allow interested readers to decide if they want to delve deeper into quantum computing
+1. To give the readers a basic understanding of the essence of quantum computers in the most simplistic and intuitive way possible (Don't worry there's no complex math :grinning:)
+2. To provide interested readers with a *really* brief overview on quantum computing so that they can decide if they want to delve deeper into the subject
+
+![Quantum](https://imgs.xkcd.com/comics/quantum.png)
 
 # Introduction
 
 A quantum computer solves computational problems by exploiting the properties of quantum mechanics. The main goal of quantum computers is to demonstrate quantum supremacy where quantum computers are able to perform tasks that classical computers would need to take millions of years to compute in under a few minutes.
+
+
+
+What to cover:
+
+
 
 # How Does it Work
 
@@ -76,7 +84,9 @@ Furthermore, these qubits are *entangled* with one another. But what do we mean 
 
 <Explanation on Quantum Entanglement + Superposition>
 
-In ordinary computers, a bit is usually stored in a transistor where a high voltage (*eg. 5V*) represents a $1$ state and a low voltage (*eg. 0V*) represents a $0$ state. On the other hand, the state of $1$ and $0$ in a quantum computer is usually represented as some property of a particle that exhibits quantum properties such as the spin $m_s$ of an electron where $\frac{1}{2}$ and $-\frac{1}{2}$ corresponds to the $1$ and $0$ state respectively. 
+In ordinary computers, a bit is usually stored in a transistor where a high voltage (*eg. 5V*) represents a $1$ state and a low voltage (*eg. 0V*) represents a $0$ state. On the other hand, the state of $1$ and $0$ in a quantum computer is usually represented as some property of a particle that exhibits quantum properties such as the spin $m_s$ of an electron where $\frac{1}{2}$ and $-\frac{1}{2}$ corresponds to the $1$ and $0$ state respectively.
+
+<div class="hover-state">There are also other ways of representing qubit states, such as the polarization of a photon (horizontal/vertical)</div>
 
  Therefore, a quantum computer with $N$ qubits, will be able to represent $2^N$ states thanks to quantum entanglement. This exponential increase in the possible represented states is key to enabling quantum computers to function.
 
@@ -105,4 +115,11 @@ https://www.youtube.com/playlist?list=PL50XnIfJxPDWDyea8EbbLe8GHfXkWU7W_
 http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html	
 
 https://qiskit.org/documentation/qc_intro.html
+
+
+
+<style> 
+    .hover-text {   display: none; }  
+    .hover-text:hover {   display: block; // or inline-block }
+</style>
 
