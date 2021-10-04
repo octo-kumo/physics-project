@@ -1,7 +1,9 @@
 <span></span>
 
 ## Hello World
-`$ P=\frac3{10}\times\frac15\times\frac1{25}=0.0024$`
+$$
+P=\frac3{10}\times\frac15\times\frac1{25}=0.0024
+$$
 
 ```java
 public static <T extends Comparable<? super T>> T[] genericSort(T[] data) {

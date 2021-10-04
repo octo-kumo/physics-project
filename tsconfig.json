@@ -28,6 +28,7 @@
     },
     "include": [
         "src/**/*.md",
+        "src/**/*.svg",
         "src/**/*.ts",
         "src/**/*.tsx",
         "src/**/*.vue",
