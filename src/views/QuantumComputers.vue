@@ -20,4 +20,12 @@ export default Vue.extend({
 #computer img {
   max-width: 100%;
 }
+
+.hover-text {
+  display: none;
+}
+
+.hover-text:hover {
+  display: block;
+}
 </style>

@@ -117,9 +117,3 @@ http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html
 https://qiskit.org/documentation/qc_intro.html
 
 
-
-<style> 
-    .hover-text {   display: none; }  
-    .hover-text:hover {   display: block; // or inline-block }
-</style>
-
