@@ -35,6 +35,9 @@
                 fill-opacity="0" stroke="#C81919"
                 stroke-width="4"/>
           <path d="M444.292,390.5 L761.292,29.5" fill-opacity="0" stroke="#C81919" stroke-width="4"/>
+          <text transform="matrix(1, 0, 0, 1, 10, 500)">
+            <tspan x="0" font-family="Avenir-Medium" font-size="41" fill="#656565">{{ state }}</tspan>
+          </text>
         </g>
       </svg>
     </kinesis-container>
@@ -52,6 +55,7 @@ let shapes = [
 export default Vue.extend({
   data: () => ({
     pos: 0,
+    state: 'Normal Conductor',
     animation: anime()
   }),
   mounted() {
@@ -70,7 +74,8 @@ export default Vue.extend({
     handleScroll() {
       this.pos = this.$el.getBoundingClientRect().y / window.visualViewport.height;
       this.pos = Math.max(Math.min(this.pos, 1), 0);
-      this.animation.seek(this.animation.duration * (1 - this.pos))
+      this.animation.seek(this.animation.duration * (1 - this.pos));
+      this.state = this.pos < 0.2 ? "Super Conductor" : "Normal Conductor";
     }
   }
 });
