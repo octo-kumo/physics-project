@@ -25,34 +25,6 @@ Table of Content
 
 # Quantum Computing
 
-History
-
-1980 Physicist Paul Benioff proposed a quantum mechanical model of the Turing machine
-
-1981  Richard Feynman and Paul Benioff proposed a basic model for a quantum computer
-
-![Remembering Richard Feynman | www.caltech.edu](https://caltech-prod.s3.amazonaws.com/main/images/feynman01-NEWS-WEB.width-600_tSwRQP5.jpg)
-
-1985 David Deutsch proposed the first universal quantum Turing machine and paved the way to the quantum circuit model
-
-1994 Peter Shor developed a quantum algorithm for factoring integers with the potential to decrypt RSA-encrypted communications
-
-![What is Shor&#39;s factoring algorithm? - YouTube](https://i.ytimg.com/vi/hOlOY7NyMfs/maxresdefault.jpg)
-
-1996 Lov Grover, at Bell Labs, invents the quantum database search algorithm (Grover's Algorithm).
-
-2019 IBM unveils its first commercial quantum computer, the IBM Q System One with 27 qubits.
-
-![IBM&#39;s new quantum computer is a symbol, not a breakthrough - The Verge](https://cdn.vox-cdn.com/thumbor/xANXGDNHPq0lYOh0hmEPFndU3ZY=/0x0:4000x4000/1400x933/filters:focal(1686x1939:2326x2579):no_upscale()/cdn.vox-cdn.com/uploads/chorus_image/image/62805283/46602874791_c009b3def8_o.0.jpg)
-
-
-
-# Foreword
-
-Before we delve into the topic of quantum computing:computer:, we feel that it is important that we bring up the objectives of the article, so that you as the reader will be able to better appreciate what will be covered. The article is written for **physics** and **computer science** high school students. Our main goal for the article is:
-
-1. To give the readers a basic understanding of the essence of quantum computers in the most simplistic and intuitive way possible (Don't worry there's no complex math :grinning:)
-2. To provide interested readers with a *really* brief overview on quantum computing so that they can decide if they want to delve deeper into the subject
 
 ![Quantum](https://imgs.xkcd.com/comics/quantum.png)
 
