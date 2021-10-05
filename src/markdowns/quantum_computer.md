@@ -1,5 +1,6 @@
 
-# What is Quantum Computing?
+
+<span />
 
 Table of Content
 
@@ -19,11 +20,9 @@ Table of Content
 
 5. The Anatomy of A Quantum Computer
 
-6. Potential Applications of Quantum Computers'
+6. Potential Applications of Quantum Computers
 
 7. Where we are now?
-
-
 
 # Quantum Computing
 
@@ -74,11 +73,11 @@ Note: Beyond this part of the guide, you will need some basic understanding on s
 
 ### The Qubit
 
-In quantum computers, we have these things called *qubits* which are analogous to the bits in a classical computer, but with a twist $\textendash$ unlike ordinary bits which can only be in two states (1 or 0), a qubit can be in a superposition of both states. 
+In quantum computers, we have these things called *qubits* which are analogous to the bits in a classical computer, but with a twist $-$ unlike ordinary bits which can only be in two states (1 or 0), a qubit can be in a superposition of both states. 
 
 In ordinary computers, a bit is usually stored in a transistor where a high voltage (*eg. 5V*) represents a $1$ state and a low voltage (*eg. 0V*) represents a $0$ state. On the other hand, the state of $1$ and $0$ in a quantum computer is usually represented as some property of a particle that exhibits quantum properties such as the spin $m_s$ of an electron where $\frac{1}{2}$ and $-\frac{1}{2}$ corresponds to the $1$ and $0$ state respectively.
 
-<div class="hover-state">There are also other ways of representing qubit states, such as the polarization of a photon (horizontal or vertical), or the spin of a nuclei (1/2 or -1/2)</div>
+There are also other ways of representing qubit states, such as the polarization of a photon (horizontal or vertical), or the spin of a nuclei (1/2 or -1/2)
 
 A single qubit which is in superposition will have 2 states :`1` or `0`
 
@@ -92,7 +91,7 @@ Hence, we can perform many operations in just a single step. However, how are we
 
 ### Quantum Algorithm
 
-The answer lies in the quantum algorithm $\textendash$​ the instructions and operations that we have applied onto the quantum system. The algorithm is designed in a way such that all of the incorrect states (states representing the wrong answers) destructively interfere and "cancel" each other out. This leaves us with a high probability of observing the desired state (the state that represents the correct answer). 
+The answer lies in the quantum algorithm $\textendash$​ the instructions and operations that we have applied onto the quantum system. The algorithm is designed in a way such that all of the incorrect states (states representing the wrong answers) destructively interfere (just like how waves do) and "cancel" each other out. This leaves us with a high probability of observing the desired state (the state that represents the correct answer). 
 
 Due to its randomness nature, quantum computation is inherently error prone. Hence, what we do is that we run the same algorithm multiple times, collect the results and tabulate them to obtain the correct answer with high confidence and low uncertainty. 
 
@@ -116,6 +115,24 @@ There are many setups for a quantum computer. Here's the *dilution refrigerator*
 
 **Cryoperm Shield** The shield houses the quantum processor and also blocks any external electromagnetic radiation from interfering with the processor
 
+# Applications Of Quantum Computer
+
+### Grover's Algorithm
+
+Problem: Were trying to check if an item is present in a list. Given that the items are randomly arranged in the list, we have no choice but to do a brute force and check every item in the list to see if it is the desired item. On a classical computer, this will take $\frac{N}{2}$ searches on average where $N$ is the number of items in the list.
+
+We can use Grover's algorithm to solve the problem in about $\sqrt{N}$ searches. To put things in perspective, if we have two billions of items to be searched, our classical computer will need to search through a billion of them on average while Grover's Algorithm will only need to perform number of operations in the order of magnitude of ten thousands $-$ significantly faster than using a classical computer.
+
+To put it very briefly, each possible state of the qubits such as `0010` will correspond to an item in the list. The algorithm creates a uniform superposition over all possibilities and repeatedly destructively interferes states that are not solutions. As a result, there is a high probability ($\ge 0.5$) that the state we observe when the superposition collapses is the state corresponding to the item we are searching for.
+
+Note: Its much more complicated than that. Grover’s algorithm doesn’t search through lists, it searches through *function inputs*. Grover’s algorithm takes a function, searches through the *implicit* list of possible inputs to that function, and (with high probability) returns the *single* input that causes the function to return true. Hence, to use the algorithm, you will need to find a suitable function that will return true only for the item to be searched and false otherwise. There are also some restrictions on the function. Hence, in general, we might not be able to apply the algorithm to search all types of items unless they satisfy the required criteria.
+
+
+
+
+
+
+
 References:
 
 https://en.wikipedia.org/wiki/Timeline_of_quantum_computing_and_communication
@@ -130,4 +147,8 @@ http://hyperphysics.phy-astr.gsu.edu/hbase/spin.html
 
 https://qiskit.org/documentation/qc_intro.html
 
+https://en.wikipedia.org/wiki/Grover%27s_algorithm#Problem_description
+
 https://medium.com/swlh/making-a-quantum-computer-at-home-bc59afe72d7d
+
+http://twistedoakstudios.com/blog/Post2644_grovers-quantum-search-algorithm	
