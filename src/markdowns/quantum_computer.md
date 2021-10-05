@@ -25,8 +25,6 @@ Table of Content
 
 # Quantum Computing
 
-![IBM &#39;super-fridge&#39; aims to solve quantum computer cooling problem -](https://techhq.com/wp-content/uploads/2019/09/40645906341_c38b22d693_k.jpg)
-
 History
 
 1980 Physicist Paul Benioff proposed a quantum mechanical model of the Turing machine
