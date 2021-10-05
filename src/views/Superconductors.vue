@@ -2,7 +2,7 @@
   <v-container fluid class="pa-0">
     <v-flex xs12 sm12>
       <v-parallax
-          height="500" src="https://www.sciencealert.com/images/2019-06/processed/superconductivity_topic_1024.jpg">
+          height="300" src="https://www.sciencealert.com/images/2019-06/processed/superconductivity_topic_1024.jpg">
         <v-layout column align-center justify-center>
           <h1>Super Conductors</h1>
         </v-layout>
@@ -11,26 +11,32 @@
     <v-container>
       <kinesis-container event="move">
         <kinesis-element type="depth" strength="5">
-          <v-card
-              class="mb-10"
-              @mouseover="backgroundHover = true"
-              @mouseleave="backgroundHover = false"
-              :elevation="backgroundHover?10:0">
-            <v-row>
-              <v-col cols="3" class="pa-0">
-                <v-img
-                    max-height="100%"
-                    src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Kamerlingh_Onnes_signed.jpg"
-                ></v-img>
-              </v-col>
-              <v-col cols="9">
-                <v-card-title>Background</v-card-title>
-                <v-card-text>
-                  <scbg/>
-                </v-card-text>
-              </v-col>
-            </v-row>
-          </v-card>
+          <v-hover v-slot="{ hover }">
+            <v-card
+                style="transition: box-shadow 0.5s;"
+                rounded
+                class="mb-10"
+                :elevation="hover?10:0">
+              <v-row>
+                <v-col cols="3" class="pa-0">
+                  <kinesis-container event="move">
+                    <kinesis-element type="depth" strength="20" axis="x">
+                      <v-img
+                          max-height="100%"
+                          src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Kamerlingh_Onnes_signed.jpg"
+                      ></v-img>
+                    </kinesis-element>
+                  </kinesis-container>
+                </v-col>
+                <v-col cols="9">
+                  <v-card-title>Background</v-card-title>
+                  <v-card-text>
+                    <scbg/>
+                  </v-card-text>
+                </v-col>
+              </v-row>
+            </v-card>
+          </v-hover>
         </kinesis-element>
       </kinesis-container>
       <scintro/>
@@ -59,7 +65,6 @@
       <TempGraph id="tempgraph"></TempGraph>
       <scexp1/>
       <Attraction/>
-      <p>&nbsp;</p>
     </v-container>
   </v-container>
 </template>
@@ -76,9 +81,7 @@ import scexp1 from '../markdowns/sc_exp_1.md';
 
 export default Vue.extend({
   name: 'About',
-  data: () => ({
-    backgroundHover: false,
-  }),
+  data: () => ({}),
   components: {
     scbg,
     scintro,

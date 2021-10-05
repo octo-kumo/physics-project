@@ -37,7 +37,7 @@
           dense>
         <v-list-item v-for="route in routes" :key="route.path" :to="route">
           <v-list-item-icon>
-            <v-icon>mdi-home</v-icon>
+            <v-icon>{{ route.meta.icon }}</v-icon>
           </v-list-item-icon>
           <v-list-item-title>
             {{ route.name }}
