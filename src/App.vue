@@ -88,11 +88,14 @@
 <script lang="ts">
 import Vue from 'vue';
 import {RouteRecordPublic} from 'vue-router'
+import ScrollMagic from 'scrollmagic';
 
+export var controller = new ScrollMagic.Controller();
 export default Vue.extend({
   name: 'App',
 
   data: () => ({
+    scroll: controller,
     group: null,
     drawer: false,
   }),

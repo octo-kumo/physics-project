@@ -589,7 +589,7 @@
            y="1010.9339"
            id="tspan4372-540"
            style="font-size:48px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:Arial;-inkscape-font-specification:Arial Bold">+</tspan></text>
-            <kinesis-element tag="g" type="translate" axis="x" strength="200">
+            <kinesis-element tag="g" type="translate" axis="x" :strength="200">
               <g
                   transform="translate(10.81759,-67.80558)"
                   id="g4378"

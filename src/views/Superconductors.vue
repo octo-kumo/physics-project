@@ -9,8 +9,8 @@
       </v-parallax>
     </v-flex>
     <v-container>
-      <kinesis-container event="move">
-        <kinesis-element type="depth" strength="5">
+      <kinesis-container event="move" id="background-info">
+        <kinesis-element type="depth" :strength="5">
           <v-hover v-slot="{ hover }">
             <v-card
                 style="transition: box-shadow 0.5s;"
@@ -18,9 +18,9 @@
                 class="mb-10"
                 :elevation="hover?10:0">
               <v-row>
-                <v-col cols="3" class="pa-0">
+                <v-col cols="12" sm="6" md="4" lg="3" class="pa-0">
                   <kinesis-container event="move">
-                    <kinesis-element type="depth" strength="20" axis="x">
+                    <kinesis-element type="depth" :strength="20" axis="x">
                       <v-img
                           max-height="100%"
                           src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Kamerlingh_Onnes_signed.jpg"
@@ -28,7 +28,7 @@
                     </kinesis-element>
                   </kinesis-container>
                 </v-col>
-                <v-col cols="9">
+                <v-col cols="12" sm="6" md="8" lg="9">
                   <v-card-title>Background</v-card-title>
                   <v-card-text>
                     <scbg/>
@@ -41,13 +41,37 @@
       </kinesis-container>
       <scintro/>
       <MetallicBonding/>
-      <h5>Insulator</h5>
-      <p>On the other hand, if we had an insulator, its electrons are strongly bound to the nucleus, hence electrons can
-        not flow through them easily. This will not stop super high potential differences from stripping the electrons
-        off.</p>
-      <p>You would not call atmosphere air a good conductor, however during a lightning strike, it does conduct
-        electricity.</p>
-      <Lightning/>
+      <v-divider class="my-8"></v-divider>
+      <section>
+        <v-hover v-slot="{ hover }" id="lightning">
+          <v-card style="transition: box-shadow 0.5s;"
+                  class="pa-4"
+                  rounded
+                  :elevation="hover?10:0">
+            <v-row>
+              <v-col cols="4" class="pa-0">
+                <Lightning :pos="lightning_pos"/>
+              </v-col>
+              <v-col cols="8">
+                <v-card-title>Insulator</v-card-title>
+                <v-card-text>On the other hand, if we had an insulator, its electrons are strongly bound to the nucleus,
+                  hence electrons can not flow through them easily. We can say that an insulator has very high
+                  resistance.
+                </v-card-text>
+                <v-card-text>
+                  If the potential difference is high enough, however, the electrons will still be able to break free,
+                  and
+                  forming a current.
+                </v-card-text>
+                <v-card-text>Atmosphere air is not a good conductor, but during a lightning strike, is is able to
+                  conduct
+                  electricity.
+                </v-card-text>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-hover>
+      </section>
       <h5>Relation with Temperature</h5>
       <p>Even in good conductors, the atoms inside still vibrate around and collides with the flowing electrons, this
         cause the electrons to lose energy, resulting in resistance.</p>
@@ -79,9 +103,14 @@ import scbg from '../markdowns/sc_bg.md';
 import scintro from '../markdowns/sc_intro.md';
 import scexp1 from '../markdowns/sc_exp_1.md';
 
+import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
+import {controller} from '../App.vue'
+
 export default Vue.extend({
   name: 'About',
-  data: () => ({}),
+  data: () => ({
+    lightning_pos: 0
+  }),
   components: {
     scbg,
     scintro,
@@ -91,7 +120,17 @@ export default Vue.extend({
     MetallicBonding,
     Attraction
   },
-  methods: {}
+  mounted() {
+    let scene = new ScrollMagic.Scene({
+      triggerElement: '#lightning',
+      triggerHook: 'onLeave',
+      offset: -94,
+      duration: 1000
+    }).setPin('#lightning')
+        .on("progress", (event: SceneProgressEvent<any>) => {
+          this.lightning_pos = event.progress;
+        }).addTo(controller);
+  }
 });
 </script>
 <style>
