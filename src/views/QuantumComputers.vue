@@ -2,8 +2,8 @@
   <v-container fluid class="pa-0">
     <v-flex xs12 sm12>
       <v-parallax
-          height="300"
-          src="https://techhq.com/wp-content/uploads/2019/09/40645906341_c38b22d693_k.jpg"
+        height="300"
+        src="https://techhq.com/wp-content/uploads/2019/09/40645906341_c38b22d693_k.jpg"
       >
         <v-layout column align-center justify-center>
           <h1>Quantum Computer</h1>
@@ -16,30 +16,28 @@
 
       <v-timeline class="pa-10">
         <v-timeline-item
-            v-for="(year, i) in years"
-            :key="i"
-            :color="year.color"
-            small
+          v-for="(year, i) in years"
+          :key="i"
+          :color="year.color"
+          small
         >
           <template v-slot:opposite>
-          <span
+            <span
               :class="`headline font-weight-bold ${year.color}--text`"
               v-text="year.year"
-          ></span>
+            ></span>
           </template>
+
           <div class="py-4">
             {{ year.text }}
           </div>
 
-          <v-layout align-end>
-            <v-img
-                v-if="year.img"
-                max-height="300"
-                max-width="273"
-                :src="year.img"
-            ></v-img>
-          </v-layout>
-
+          <v-img
+            v-if="year.img"
+            max-height="300"
+            max-width="273"
+            :src="year.img"
+          ></v-img>
         </v-timeline-item>
       </v-timeline>
 
