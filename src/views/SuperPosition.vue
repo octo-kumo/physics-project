@@ -17,4 +17,7 @@ export default Vue.extend({
 });
 </script>
 <style>
+img {
+  max-width: 100%;
+}
 </style>

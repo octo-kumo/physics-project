@@ -16,16 +16,16 @@
         </g>
         <path d="M9.5,9.5 L9.5,514.5 L948.5,514.5" fill-opacity="0" stroke="#656565" stroke-width="4"/>
         <text transform="matrix(1, 0, 0, 1, 763.765, 311.83)">
-          <tspan x="-121.913" y="8" font-family="Avenir-Medium" font-size="41" fill="#656565">Linear region</tspan>
+          <tspan x="-121.913" y="8" font-size="41" fill="#656565">Linear region</tspan>
         </text>
         <text transform="matrix(1, 0, 0, 1, 781.765, 562.83)">
-          <tspan x="-118.101" y="8" font-family="Avenir-Medium" font-size="41" fill="#656565">Temperature</tspan>
+          <tspan x="-118.101" y="8" font-size="41" fill="#656565">Temperature</tspan>
         </text>
         <text transform="matrix(1, 0, 0, 1, 258.265, 172.915)">
-          <tspan x="-199.752" y="-20.085" font-family="Avenir-Medium" font-size="41" fill="#656565">Region dominated
+          <tspan x="-199.752" y="-20.085" font-size="41" fill="#656565">Region dominated
             by
           </tspan>
-          <tspan x="-172.712" y="35.915" font-family="Avenir-Medium" font-size="41" fill="#656565">constant
+          <tspan x="-172.712" y="35.915" font-size="41" fill="#656565">constant
             resistivity
           </tspan>
         </text>
@@ -34,8 +34,8 @@
               fill-opacity="0" stroke="#C81919"
               stroke-width="4"/>
         <path d="M444.292,390.5 L761.292,29.5" fill-opacity="0" stroke="#C81919" stroke-width="4"/>
-        <text transform="matrix(1, 0, 0, 1, 10, 500)">
-          <tspan x="0" font-family="Avenir-Medium" font-size="41" fill="#fff">{{ state }}</tspan>
+        <text transform="matrix(1, 0, 0, 1, 20, 500)">
+          <tspan x="0" font-size="41" fill="#668">{{ state }}</tspan>
         </text>
       </g>
     </svg>

@@ -1,4 +1,4 @@
-const latex = require('@iktakahiro/markdown-it-katex')
+const latex = require('@traptitech/markdown-it-katex')
 module.exports = {
     publicPath: '/physics-project/',
     transpileDependencies: [
