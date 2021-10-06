@@ -101,18 +101,18 @@
           </v-card>
         </v-hover>
       </section>
-      <section class="justify-center px-5 mt-2">
+      <section class="justify-center px-5 my-5">
         <h3>Pretty Cool</h3>
         <p>That means if you have a looping coil of superconducting wires, and run a current through it, it will
           not lose energy even if we leave it there for years. This has been done and there were no measurable lose in
           intensity of the current.</p>
-        <v-btn class="my-2" outlined to="/magnet">This is however not the ideal zero resistance material of classical
+        <v-btn class="my-2" outlined to="magnet">This is however not the ideal zero resistance material of classical
           physics.
         </v-btn>
         <p>But how is it possible for something to have zero resistance and why does the resistance suddenly
           drop to zero at a certain temperature?</p>
       </section>
-      <section>
+      <section class="my-5" id="attractionAnchor">
         <v-hover v-slot="{ hover }" id="attraction">
           <v-card style="transition: box-shadow 0.5s;"
                   class="pa-4"
@@ -129,18 +129,38 @@
         </v-hover>
       </section>
       <scexp2/>
-      <v-img :src="require('../assets/halfspin.dark.svg')" width="100%"/>
-      <section>
+      <v-row justify="center">
+        <v-col>
+          <HalfSpin/>
+        </v-col>
+      </v-row>
+      <section class="my-5">
         <v-hover v-slot="{ hover }" id="attraction2">
           <v-card style="transition: box-shadow 0.5s;"
                   class="pa-4"
                   :elevation="hover?10:0">
             <v-row>
               <v-col cols="4" class="pa-0">
-                <Attraction :pos="attraction2_pos" n="3" strength="50"/>
+                <Attraction :pos="attraction2_pos" n="5" strength="20"/>
               </v-col>
               <v-col cols="8">
                 <scexp3/>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-hover>
+      </section>
+      <section class="my-5">
+        <v-hover v-slot="{ hover }">
+          <v-card style="transition: box-shadow 0.5s;"
+                  class="pa-4"
+                  :elevation="hover?10:0">
+            <v-row>
+              <v-col cols="8">
+                <scexp4/>
+              </v-col>
+              <v-col cols="4">
+                <EnergyGraph/>
               </v-col>
             </v-row>
           </v-card>
@@ -155,12 +175,15 @@ import Lightning from "../animations/lightning.vue";
 import MetallicBonding from "../animations/metallic_lattice.vue";
 import TempGraph from "../animations/resis_graph.vue";
 import Attraction from "../animations/attraction.vue";
+import EnergyGraph from '../assets/energy-graph.svg';
+import HalfSpin from '../assets/halfspin.dark.svg';
 
 import scbg from '../markdowns/sc_bg.md';
 import scintro from '../markdowns/sc_intro.md';
 import scexp1 from '../markdowns/sc_exp_1.md';
 import scexp2 from '../markdowns/sc_exp_2.md';
 import scexp3 from '../markdowns/sc_exp_3.md';
+import scexp4 from '../markdowns/sc_exp_4.md';
 
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
@@ -176,7 +199,9 @@ export default Vue.extend({
   components: {
     scbg,
     scintro,
-    scexp1, scexp2, scexp3,
+    scexp1, scexp2, scexp3, scexp4,
+    EnergyGraph,
+    HalfSpin,
     TempGraph,
     Lightning,
     MetallicBonding,
