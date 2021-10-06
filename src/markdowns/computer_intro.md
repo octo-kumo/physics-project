@@ -44,3 +44,8 @@ Due to its randomness nature, quantum computation is inherently error prone. Hen
 It should also be noted that quantum computers are often used to solve a class of problems known as NP-problems. The solutions to these problems can be easily verified using classical computers in polynomial time. However, the time required to find these solutions will be exponential, which will take millions of years for a classical computer to solve, but only a few minutes for quantum computers. Since they are easily verifiable, we can check with certainty if the solution we obtain from the quantum computer is correct. For example integer factorization is a NP-problem. Checking if some numbers are a factor of a number is easy: we just need to multiply them. However, finding the factors for a number is generally *very* difficult. 
 
 ![The Math behind Quantum Computing — Qubits and Superposition | by Ryan Lam  | DataDrivenInvestor](https://miro.medium.com/max/1400/0*xllJMzdAuDlba2xL)
+
+
+# Anatomy of A *Simplified* Quantum Computer
+
+There are many setups for a quantum computer. Here's the *dilution refrigerator* setup, which is quite commonly used.

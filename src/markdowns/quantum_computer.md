@@ -1,12 +1,4 @@
 <efe></efe>
-
-# Anatomy of A *Simplified* Quantum Computer
-
-There are many setups for a quantum computer. Here's the *dilution refrigerator* setup, which is quite commonly used.
-
-![img](https://miro.medium.com/max/945/1*6DDQIebhDbbzopuWcNe5mQ.png)
-
-
 **Plates** The plates hold all the components in place so that they can decrease in temperature. From top to bottom, the plates decrease in temperature from ~4 Kelvin at the topmost plate to ~0.15K at the bottom most plate (Colder than the temperature in outer space)
 
 **Mixing Chamber** In the chamber, helium-3 and helium-4 are mixed together, such that they act as a cooling system to conduct heat away from the processor to allow it to operate at temperatures as low as 0.15 K.
