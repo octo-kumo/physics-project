@@ -1,5 +1,5 @@
 <span></span>
-## Explanation
+## Explanation 1
 In this metallic lattice of the superconducting material, it has been cooled by liquid helium and hence the vibrations are negligible. 
 
 These atoms are positively charged since they lost their electrons, they will be attracted to electrons.

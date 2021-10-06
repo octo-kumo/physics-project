@@ -1,5 +1,5 @@
 <template>
-  <div v-scroll="handleScroll">
+  <div>
     <kinesis-container
         duration="0"
         event="scroll">
@@ -10,8 +10,8 @@
           xmlns:svg="http://www.w3.org/2000/svg"
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
-          width="770"
-          height="600"
+          viewBox="0,0,770,600"
+          width="50%"
           id="svg3797">
         <defs
             id="defs3"/>
@@ -860,21 +860,5 @@
 <script lang="ts">
 import Vue from "vue";
 
-export default Vue.extend({
-  data: () => ({
-    pos: 0
-  }),
-  methods: {
-    handleScroll() {
-      this.pos = this.$el.getBoundingClientRect().y / window.visualViewport.height;
-    }
-  },
-  computed: {
-    lightningStyle() {
-      return {
-        '--current-pos': this.pos * 300
-      }
-    }
-  }
-});
+export default Vue.extend({});
 </script>

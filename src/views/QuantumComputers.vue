@@ -2,8 +2,8 @@
   <v-container fluid class="pa-0">
     <v-flex xs12 sm12>
       <v-parallax
-        height="300"
-        src="https://techhq.com/wp-content/uploads/2019/09/40645906341_c38b22d693_k.jpg"
+          height="300"
+          src="https://techhq.com/wp-content/uploads/2019/09/40645906341_c38b22d693_k.jpg"
       >
         <v-layout column align-center justify-center>
           <h1>Quantum Computer</h1>
@@ -11,38 +11,40 @@
       </v-parallax>
     </v-flex>
 
-    <Foreword class="pa-10"></Foreword>
+    <v-container>
+      <Foreword class="pa-10"></Foreword>
 
-    <v-timeline class="pa-10">
-      <v-timeline-item
-        v-for="(year, i) in years"
-        :key="i"
-        :color="year.color"
-        small
-      >
-        <template v-slot:opposite>
+      <v-timeline class="pa-10">
+        <v-timeline-item
+            v-for="(year, i) in years"
+            :key="i"
+            :color="year.color"
+            small
+        >
+          <template v-slot:opposite>
           <span
-            :class="`headline font-weight-bold ${year.color}--text`"
-            v-text="year.year"
+              :class="`headline font-weight-bold ${year.color}--text`"
+              v-text="year.year"
           ></span>
-        </template>
-        <div class="py-4">
-          {{ year.text }}
-        </div>
+          </template>
+          <div class="py-4">
+            {{ year.text }}
+          </div>
 
-        <v-layout align-end>
-          <v-img 
-          v-if="year.img"
-          max-height="300"
-          max-width="273"
-          :src="year.img"
-        ></v-img>
-        </v-layout>
-        
-      </v-timeline-item>
-    </v-timeline>
+          <v-layout align-end>
+            <v-img
+                v-if="year.img"
+                max-height="300"
+                max-width="273"
+                :src="year.img"
+            ></v-img>
+          </v-layout>
 
-    <Computer id="computer" class="pa-10"></Computer>
+        </v-timeline-item>
+      </v-timeline>
+
+      <Computer id="computer" class="pa-10"></Computer>
+    </v-container>
   </v-container>
 </template>
 

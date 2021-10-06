@@ -390,7 +390,9 @@ import Vue from "vue";
 
 export default Vue.extend({
   props: {
-    pos: Number
+    pos: {
+      default: 0
+    }
   },
   computed: {
     lightningStyle() {

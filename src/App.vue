@@ -2,9 +2,7 @@
   <v-app>
     <v-app-bar
         app
-        shrink-on-scroll
         dense
-        prominent
         fade-img-on-scroll
         color="dark"
         dark
@@ -54,6 +52,7 @@
       </v-footer>
     </v-navigation-drawer>
     <v-main id="main-view">
+
       <router-view/>
     </v-main>
     <v-footer
