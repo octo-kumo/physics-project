@@ -40,8 +40,22 @@
           ></v-img>
         </v-timeline-item>
       </v-timeline>
+      <Intro id="intro"></Intro>
 
-      <Computer id="computer" class="pa-10"></Computer>
+      <v-carousel>
+        <v-carousel-item
+          v-for="(item, i) in parts"
+          :key="i"
+          reverse-transition="fade-transition"
+          transition="fade-transition"
+        >
+        
+        <v-img src="${item.img}" />
+        
+        </v-carousel-item>
+      </v-carousel>
+
+      <Computer id="computer"></Computer>
     </v-container>
   </v-container>
 </template>
@@ -50,16 +64,26 @@
 import Vue from "vue";
 import Computer from "../markdowns/quantum_computer.md";
 import Foreword from "../markdowns/computer_foreword.md";
+import Intro from "../markdowns/computer_intro.md";
 
 export default Vue.extend({
   name: "Home",
 
   components: {
     Foreword,
+    Intro,
     Computer,
   },
 
   data: () => ({
+    parts: [
+      {
+        title: "Shell",
+        desc: "It is installed to isolate the system from the rest of the environment. It helps to maintain the low temperature and shield the internal components from any stray electromagnetic waves",
+        img: "@/assets/shield.png",
+      },
+    ],
+
     years: [
       {
         color: "cyan",
@@ -109,5 +133,9 @@ export default Vue.extend({
 
 .hover-text:hover {
   display: block;
+}
+
+.carousel-inner > .item {
+   height: 400px;
 }
 </style>
