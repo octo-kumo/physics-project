@@ -69,7 +69,12 @@
             class="mx-2 my-1"
             text
         >
-          {{ route.name }}
+          <v-tooltip top>
+            <template v-slot:activator="{ on, attrs }">
+              <v-icon v-bind="attrs" v-on="on">{{ route.meta.icon }}</v-icon>
+            </template>
+            <span>{{ route.name }}</span>
+          </v-tooltip>
         </v-btn>
         <v-col
             class="py-2 text-center"

@@ -1,17 +1,22 @@
-<span></span>
+<efe></efe>
 # **Quantum Superposition**
 
 It is a fundamental principle in quantum mechanics where it states that any two or more quantum states can be superposed and the result will be another valid quantum state. Alternatively, it states that every quantum state can be represented as a sum of two or more other distinct states.
 In physical terms, lets take an electron. When we measure the spin of the electron it can either spin up (clockwise) or spin down (counterclockwise). Since due to quantum mechanics the electrons have a supposition when not measured, the electron is a superposition of spin up and down. It has a complex combination of both. 
 Its physical system can be represented by this:
 $$
+\begin{align}
 C_1\mid\uparrow\rangle+C_2\mid\uparrow\rangle
+\end{align}
 $$
 The coefficients represent the probability of the electron being spin up or down. The probability for a specified configuration is given by the square of the absolute value of the coefficient. So the probabilities should add up to 1. The electron is in one of those two states for sure.
 $$
+\begin{align}
 p_{up}= \mid c_1\mid ^2 \newline
 p_{down}= \mid c_2\mid ^2\newline
 p_{up or down} = p_{down}+p_{up}=1
+
+\end{align}
 $$
  As a whole a particle can have any position  so that there are different configurations which have any value of the position *x*. These are written:
 $$

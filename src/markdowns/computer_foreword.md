@@ -1,4 +1,4 @@
-<span></span>
+<efe></efe>
 # Foreword
 
 Before we delve into the topic of quantum computing💻, we feel that it is important that we bring up the objectives of the article, so that you as the reader will be able to better appreciate what will be covered. The article is written for **physics** and **computer science** high school students. Our main goal for the article is:

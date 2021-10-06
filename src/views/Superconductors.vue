@@ -2,9 +2,9 @@
   <v-container fluid class="pa-0">
     <v-flex xs12 sm12>
       <v-parallax
-          height="300" src="https://www.sciencealert.com/images/2019-06/processed/superconductivity_topic_1024.jpg">
+          height="200" src="https://www.sciencealert.com/images/2019-06/processed/superconductivity_topic_1024.jpg">
         <v-layout column align-center justify-center>
-          <h1>Super Conductors</h1>
+          <h1 id="main-title" class="rounded">Super Conductors</h1>
         </v-layout>
       </v-parallax>
     </v-flex>
@@ -85,7 +85,7 @@
                     resistance.And when the material is cooler, the resistance is lower.</p>
                   <p>Similarly, as the electrons collide with the atoms, the material will gain energy in the form of
                     heat.</p>
-                  <div v-visible="temp_pos>0.5">
+                  <div :class="{animateShow:true,shown:temp_pos>0.5}">
                     <h3>Exception</h3>
                     <p>However for some materials, when it is cooled under a certain temperature called the
                       <strong>critical temperature</strong>, its resistance drops to zero and currents can flow through
@@ -106,9 +106,9 @@
         <p>That means if you have a looping coil of superconducting wires, and run a current through it, it will
           not lose energy even if we leave it there for years. This has been done and there were no measurable lose in
           intensity of the current.</p>
-        <v-btn outlined to="/magnet">This is however not the ideal zero resistance material of classical physics.
+        <v-btn class="my-2" outlined to="/magnet">This is however not the ideal zero resistance material of classical
+          physics.
         </v-btn>
-
         <p>But how is it possible for something to have zero resistance and why does the resistance suddenly
           drop to zero at a certain temperature?</p>
       </section>
@@ -129,6 +129,23 @@
         </v-hover>
       </section>
       <scexp2/>
+      <v-img :src="require('../assets/halfspin.dark.svg')" width="100%"/>
+      <section>
+        <v-hover v-slot="{ hover }" id="attraction2">
+          <v-card style="transition: box-shadow 0.5s;"
+                  class="pa-4"
+                  :elevation="hover?10:0">
+            <v-row>
+              <v-col cols="4" class="pa-0">
+                <Attraction :pos="attraction2_pos" n="3" strength="50"/>
+              </v-col>
+              <v-col cols="8">
+                <scexp3/>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-hover>
+      </section>
     </v-container>
   </v-container>
 </template>
@@ -143,6 +160,7 @@ import scbg from '../markdowns/sc_bg.md';
 import scintro from '../markdowns/sc_intro.md';
 import scexp1 from '../markdowns/sc_exp_1.md';
 import scexp2 from '../markdowns/sc_exp_2.md';
+import scexp3 from '../markdowns/sc_exp_3.md';
 
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
@@ -152,13 +170,13 @@ export default Vue.extend({
   data: () => ({
     lightning_pos: 0,
     temp_pos: 0,
-    attraction_pos: 0
+    attraction_pos: 0,
+    attraction2_pos: 0
   }),
   components: {
     scbg,
     scintro,
-    scexp1,
-    scexp2,
+    scexp1, scexp2, scexp3,
     TempGraph,
     Lightning,
     MetallicBonding,
@@ -190,11 +208,54 @@ export default Vue.extend({
         })
             .setPin('#attraction')
             .on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction_pos = event.progress))
+        .addScene(new ScrollMagic.Scene({
+          triggerElement: '#attraction2',
+          triggerHook: 'onLeave',
+          offset: -94,
+          duration: 1000
+        })
+            .setPin('#attraction2')
+            .on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction2_pos = event.progress))
   }
 });
 </script>
 <style>
 .v-application.theme--dark #tempgraph {
   filter: invert(35%) sepia(36%) saturate(100%) hue-rotate(2deg) brightness(150%) contrast(88%);
+}
+
+#main-title {
+  padding: 1em 2em;
+  backdrop-filter: blur(10px) brightness(60%);
+}
+
+.animateShow {
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+
+.animateShow.shown {
+  opacity: 1;
+}
+
+blockquote {
+  backdrop-filter: invert(10%);
+  border-left: 10px solid #aaaa;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
 }
 </style>

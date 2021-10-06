@@ -1,4 +1,4 @@
-<span></span>
+<efe></efe>
 
 # Anatomy of A *Simplified* Quantum Computer
 
