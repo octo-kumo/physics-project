@@ -40,20 +40,32 @@
           ></v-img>
         </v-timeline-item>
       </v-timeline>
+
       <Intro id="intro"></Intro>
 
-      <v-carousel>
-        <v-carousel-item
-          v-for="(item, i) in parts"
-          :key="i"
-          reverse-transition="fade-transition"
-          transition="fade-transition"
-        >
-        
-        <v-img src="${item.img}" />
-        
-        </v-carousel-item>
-      </v-carousel>
+      <v-container fluid class="pa-0">
+        <v-row no-gutters align="stretch">
+          <v-col align="center" justify="center">
+            <v-card class="pa-2" outlined tile>
+              <v-img contain max-width="225" src="@/assets/shield.png" />
+            </v-card>
+          </v-col>
+          <v-col class="d-flex">
+            <v-card class="pa-2" outlined tile>
+              <v-card-title>Shell</v-card-title>
+              <v-card-text
+                >It is installed to isolate the system from the rest of the
+                environment. It helps to maintain the low temperature and shield
+                the internal components from any stray electromagnetic
+                waves</v-card-text
+              >
+            </v-card>
+          </v-col>
+        </v-row>
+        <v-row no-gutters align="center" justify="center">
+          <v-pagination v-model="page" :length="5"></v-pagination>
+        </v-row>
+      </v-container>
 
       <Computer id="computer"></Computer>
     </v-container>
@@ -76,14 +88,6 @@ export default Vue.extend({
   },
 
   data: () => ({
-    parts: [
-      {
-        title: "Shell",
-        desc: "It is installed to isolate the system from the rest of the environment. It helps to maintain the low temperature and shield the internal components from any stray electromagnetic waves",
-        img: "@/assets/shield.png",
-      },
-    ],
-
     years: [
       {
         color: "cyan",
@@ -136,6 +140,6 @@ export default Vue.extend({
 }
 
 .carousel-inner > .item {
-   height: 400px;
+  height: 400px;
 }
 </style>
