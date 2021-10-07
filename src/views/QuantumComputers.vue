@@ -261,7 +261,7 @@ export default Vue.extend({
           "What order of magnitude of operations would Grover's algorithm need to find an item in a list with 10^8 items",
         choices: ["0", "10^4", "10^8", "10^6"],
         reason:
-          "Grover's algorithm will only require k*sqrt(N) operations for N items. Hence, the magnitude is approximately sqrt(10^8)=10^4",
+          "Grover's algorithm will only require k*sqrt(N) operations for N items. Hence, the order of magnitude is approximately sqrt(10^8)=10^4",
         correct: 1,
         answer: -1,
         buffer: -1,
