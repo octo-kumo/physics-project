@@ -57,7 +57,7 @@
         class="mt-5 pa-10"
         :elevation="10"
       >
-        <ComputerWorks/>
+        <ComputerWorks />
 
         <v-expansion-panels>
           <v-expansion-panel>
@@ -155,6 +155,28 @@
         <QuantumFuture />
       </v-card>
     </v-container>
+
+    <v-container style="pa-10">
+      <h1>Quiz</h1>
+      <Quiz v-model="questions" />
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header> About </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <h4>Hee Lai</h4>
+            <body>
+              made this page
+            </body>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header> Sources </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <Sources />
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+    </v-container>
   </v-container>
 </template>
 
@@ -167,6 +189,8 @@ import QubitStates from "../markdowns/qubit_states.md";
 import QuantumFuture from "../markdowns/future_quantum_computer.md";
 import ComputerWorks from "../markdowns/computer_works.md";
 import ComputerAlgo from "../markdowns/computer_algo.md";
+import Quiz from "../components/Quiz.vue";
+import Sources from "../markdowns/computer_sources.md";
 
 export default Vue.extend({
   name: "Quantum Computer",
@@ -179,6 +203,8 @@ export default Vue.extend({
     GroverNote,
     QubitStates,
     QuantumFuture,
+    Sources,
+    Quiz,
   },
 
   data: () => ({
@@ -215,6 +241,40 @@ export default Vue.extend({
         title: "Cryoperm Shield",
         desc: "The shield houses the quantum processor where the quibts are located and also blocks any external electromagnetic radiation from interfering with the processor",
         img: require("@/assets/shield.png"),
+      },
+    ],
+
+    questions: [
+      {
+        title: "States",
+        question: "How many states does 12 qubits represent in total?",
+        choices: ["12", "2048", "24", "4096"],
+        reason:
+          "N qubits can represent 2^N states. Hence, the correct answer is 2^12=4096",
+        correct: 3,
+        answer: -1,
+        buffer: -1,
+      },
+      {
+        title: "Grover",
+        question:
+          "What order of magnitude of operations would Grover's algorithm need to find an item in a list with 10^8 items",
+        choices: ["0", "10^4", "10^8", "10^6"],
+        reason:
+          "Grover's algorithm will only require k*sqrt(N) operations for N items. Hence, the magnitude is approximately sqrt(10^8)=10^4",
+        correct: 1,
+        answer: -1,
+        buffer: -1,
+      },
+      {
+        title: "Anatomy",
+        question: "Where are the Qubits located physically?",
+        choices: ["Cryoperm Shield", "Mixing Chamber", "Shell", "Plates"],
+        reason:
+          "The qubits are located in the quantum processor which is located in the cryoperm shield",
+        correct: 0,
+        answer: -1,
+        buffer: -1,
       },
     ],
 
