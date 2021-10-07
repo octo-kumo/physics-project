@@ -170,6 +170,9 @@
         </v-hover>
       </section>
       <MagnetExp1/>
+      <v-divider class="my-5"/>
+      <h1>Quiz</h1>
+      <Quiz v-model="questions"/>
     </v-container>
   </v-container>
 </template>
@@ -189,9 +192,9 @@ import scexp2 from '../markdowns/sc_exp_2.md';
 import scexp3 from '../markdowns/sc_exp_3.md';
 import scexp4 from '../markdowns/sc_exp_4.md';
 import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
-
 import MagnetExp1 from '../markdowns/sc_magnet_1.md';
 
+import Quiz from '../components/Quiz.vue';
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
 
@@ -201,12 +204,34 @@ export default Vue.extend({
     lightning_pos: 0,
     temp_pos: 0,
     attraction_pos: 0,
-    attraction2_pos: 0
+    attraction2_pos: 0,
+    questions: [
+      {
+        title: "Fox",
+        question: "What does the fox say?",
+        choices: ['woof', 'meow', 'tweet', 'fox girls good'],
+        correct: 3, answer: -1, buffer: -1
+      },
+      {
+        title: "Long",
+        question: "I like long questions, but there is only 1 answer, it could be 2, but it can not be any other number",
+        choices: ['i love this answer, however its a pity, it is not the one',
+          'i love this answer, for that, it shall be MADE IN HEAVEN',
+          'i dont like this answer, it can have very long long long long long content but still not the correct answer hahahaha. this is pretty cool though', 'squeek'],
+        correct: 3, answer: -1, buffer: -1
+      },
+      {
+        title: "Press",
+        question: "Press 4",
+        choices: ['1', '2', '3', '4'],
+        correct: 3, answer: -1, buffer: -1
+      },
+    ]
   }),
   components: {
     scbg,
     scintro,
-    scexp1, scexp2, scexp3, scexp4,
+    scexp1, scexp2, scexp3, scexp4, Quiz,
     scexpHalfSpin,
     EnergyGraph,
     HalfSpin,
@@ -223,33 +248,25 @@ export default Vue.extend({
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        })
-            .setPin('#lightning')
-            .on("progress", (event: SceneProgressEvent<'progress'>) => this.lightning_pos = event.progress))
+        }).setPin('#lightning').on("progress", (event: SceneProgressEvent<'progress'>) => this.lightning_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#temp_graph',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        })
-            .setPin('#temp_graph')
-            .on("progress", (event: SceneProgressEvent<'progress'>) => this.temp_pos = event.progress))
+        }).setPin('#temp_graph').on("progress", (event: SceneProgressEvent<'progress'>) => this.temp_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#attraction',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        })
-            .setPin('#attraction')
-            .on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction_pos = event.progress))
+        }).setPin('#attraction').on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#attraction2',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        })
-            .setPin('#attraction2')
-            .on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction2_pos = event.progress))
+        }).setPin('#attraction2').on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction2_pos = event.progress))
   }
 });
 </script>
