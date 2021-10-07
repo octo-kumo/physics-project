@@ -55,37 +55,15 @@
 
       <router-view/>
     </v-main>
-    <v-footer
-        app
-        absolute
-        padless>
-      <v-row
-          justify="center"
-          no-gutters>
-        <v-btn
-            v-for="route in routes"
-            :key="route.path"
-            :to="route"
-            class="mx-2 my-1"
-            text
-        >
-          <v-tooltip top>
-            <template v-slot:activator="{ on, attrs }">
-              <v-icon v-bind="attrs" v-on="on">{{ route.meta.icon }}</v-icon>
-            </template>
-            <span>{{ route.name }}</span>
-          </v-tooltip>
-        </v-btn>
-        <v-col
-            class="py-2 text-center"
-            cols="12">
-          Group Members ·
-          <v-btn>Zhao Yun</v-btn>
-          <v-btn>Nithesh</v-btn>
-          <v-btn>Hee Lai</v-btn>
-        </v-col>
-      </v-row>
-    </v-footer>
+    <v-bottom-navigation>
+      <v-btn v-for="route in routes"
+             :key="route.path"
+             :to="route">
+        <span>{{ route.name }}</span>
+
+        <v-icon>{{ route.meta.icon }}</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
   </v-app>
 </template>
 

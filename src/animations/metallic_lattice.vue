@@ -1,7 +1,6 @@
 <template>
   <div>
     <kinesis-container
-        duration="0"
         event="scroll">
       <svg
           xmlns:dc="http://purl.org/dc/elements/1.1/"
