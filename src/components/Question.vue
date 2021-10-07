@@ -1,14 +1,21 @@
 <template>
   <v-card color="rgb(0, 0, 0, 0)" tile elevation="0">
     <v-card-title>{{ value.question }}</v-card-title>
+    <v-card-text v-if="value.answer!==-1">
+      <v-alert
+          :type="value.answer===value.correct?'success':'error'">
+        {{ value.reason }}
+      </v-alert>
+    </v-card-text>
     <v-card-actions>
       <v-item-group style="width:100%" v-model="value.buffer">
         <v-row no-gutters class="rounded overflow-hidden fill-height">
           <v-col cols="6" :key="c" v-for="(c,i) in value.choices">
             <v-card
-                @click="value.buffer=i"
+                @click="()=>{if(value.answer===-1)value.buffer=i}"
                 class="choice py-10 fill-height" tile elevation="0"
-                :color="i===value.buffer?(['var(--color-1)', 'var(--color-2)', 'var(--color-3)', 'var(--color-4)'])[i]:'dark'">
+                :color="value.answer===-1?(i===value.buffer?(['var(--color-1)', 'var(--color-2)', 'var(--color-3)', 'var(--color-4)'])[i]:'dark'):
+                (i===value.correct?'var(--color-2)':i===value.answer?'var(--color-4)':'dark')">
               <v-card-text style="font-size: 1.2em" class="text-center">{{ c }}</v-card-text>
             </v-card>
           </v-col>
@@ -29,10 +36,10 @@ export default Vue.extend({
 
 <style scoped>
 .choice {
-  --color-1: #66a7d2;
-  --color-2: #6db448;
-  --color-3: #ff7f31;
-  --color-4: #fa385b;
+  --color-1: #92cbfa;
+  --color-2: #a8fc7d;
+  --color-3: #ffb084;
+  --color-4: #ff8096;
 }
 
 .v-application.theme--dark .choice {

@@ -169,7 +169,16 @@
           </v-card>
         </v-hover>
       </section>
-      <MagnetExp1/>
+      <section class="my-5 pa-5">
+        <v-row id="flex-animation">
+          <v-col cols="12" sm="6">
+            <MagnetExp1/>
+          </v-col>
+          <v-col cols="12" sm="6">
+            <Flux id="flex-svg"/>
+          </v-col>
+        </v-row>
+      </section>
       <v-divider class="my-5"/>
       <h1>Quiz</h1>
       <Quiz v-model="questions"/>
@@ -182,6 +191,7 @@ import Lightning from "../animations/lightning.vue";
 import MetallicBonding from "../animations/metallic_lattice.vue";
 import TempGraph from "../animations/resis_graph.vue";
 import Attraction from "../animations/attraction.vue";
+import Flux from '../animations/magnetic_flux.svg';
 import EnergyGraph from '../assets/energy-graph.svg';
 import HalfSpin from '../assets/halfspin.dark.svg';
 
@@ -197,6 +207,7 @@ import MagnetExp1 from '../markdowns/sc_magnet_1.md';
 import Quiz from '../components/Quiz.vue';
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
+import anime from 'animejs/lib/anime.es.js';
 
 export default Vue.extend({
   name: 'Superconductor',
@@ -205,11 +216,13 @@ export default Vue.extend({
     temp_pos: 0,
     attraction_pos: 0,
     attraction2_pos: 0,
+    flux_animation: anime(),
     questions: [
       {
         title: "Fox",
         question: "What does the fox say?",
         choices: ['woof', 'meow', 'tweet', 'fox girls good'],
+        reason: 'Fox girls are good',
         correct: 3, answer: -1, buffer: -1
       },
       {
@@ -218,12 +231,14 @@ export default Vue.extend({
         choices: ['i love this answer, however its a pity, it is not the one',
           'i love this answer, for that, it shall be MADE IN HEAVEN',
           'i dont like this answer, it can have very long long long long long content but still not the correct answer hahahaha. this is pretty cool though', 'squeek'],
-        correct: 3, answer: -1, buffer: -1
+        reason: 'I gave you the answer',
+        correct: 1, answer: -1, buffer: -1
       },
       {
         title: "Press",
         question: "Press 4",
         choices: ['1', '2', '3', '4'],
+        reason: 'Number 4 is 4',
         correct: 3, answer: -1, buffer: -1
       },
     ]
@@ -233,7 +248,7 @@ export default Vue.extend({
     scintro,
     scexp1, scexp2, scexp3, scexp4, Quiz,
     scexpHalfSpin,
-    EnergyGraph,
+    EnergyGraph, Flux,
     HalfSpin,
     TempGraph,
     Lightning,
@@ -242,6 +257,15 @@ export default Vue.extend({
     MagnetExp1
   },
   mounted() {
+    this.flux_animation = anime({
+      targets: '#flex-svg path',
+      strokeDashoffset: [anime.setDashoffset, 0],
+      easing: 'easeInOutSine',
+      duration: 1000,
+      delay: (el: Element, i: number) => (i % 54) * 100,
+      direction: 'alternate',
+      autoplay: false
+    });
     controller
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#lightning',
@@ -267,6 +291,12 @@ export default Vue.extend({
           offset: -94,
           duration: 1000
         }).setPin('#attraction2').on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction2_pos = event.progress))
+        .addScene(new ScrollMagic.Scene({
+          triggerElement: '#flex-animation',
+          triggerHook: 'onLeave',
+          offset: -94,
+          duration: 1000
+        }).setPin('#flex-animation').on("progress", (event: SceneProgressEvent<'progress'>) => this.flux_animation.seek(event.progress * this.flux_animation.duration)))
   }
 });
 </script>
