@@ -27,6 +27,7 @@ const routes: Array<RouteConfig> = [
 
 const router = new VueRouter({
     mode: 'history',
+    base: '/physics-project',
     routes
 })
 router.beforeEach((to, from, next) => {
