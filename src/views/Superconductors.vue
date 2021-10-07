@@ -182,6 +182,24 @@
       <v-divider class="my-5"/>
       <h1>Quiz</h1>
       <Quiz v-model="questions"/>
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            About
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <About/>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            Sources
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <Sources/>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-container>
   </v-container>
 </template>
@@ -203,6 +221,8 @@ import scexp3 from '../markdowns/sc_exp_3.md';
 import scexp4 from '../markdowns/sc_exp_4.md';
 import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
 import MagnetExp1 from '../markdowns/sc_magnet_1.md';
+import About from '../markdowns/sc_about.md';
+import Sources from '../markdowns/sc_sources.md';
 
 import Quiz from '../components/Quiz.vue';
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
@@ -219,28 +239,69 @@ export default Vue.extend({
     flux_animation: anime(),
     questions: [
       {
-        title: "Fox",
-        question: "What does the fox say?",
-        choices: ['woof', 'meow', 'tweet', 'fox girls good'],
-        reason: 'Fox girls are good',
+        title: "Superconductivity",
+        question: "What does superconductivity mean?",
+        choices: ['It is super good at conducting', 'It is super bad at conducting', 'It conducts superbly', 'Conductivity that surpasses the norm and enters 𝕴𝖓𝖋𝖎𝖓𝖎𝖙𝖞'],
+        reason: 'Superconductors in theory, has zero resistance, and infinite conductivity.',
         correct: 3, answer: -1, buffer: -1
       },
       {
-        title: "Long",
-        question: "I like long questions, but there is only 1 answer, it could be 2, but it can not be any other number",
-        choices: ['i love this answer, however its a pity, it is not the one',
-          'i love this answer, for that, it shall be MADE IN HEAVEN',
-          'i dont like this answer, it can have very long long long long long content but still not the correct answer hahahaha. this is pretty cool though', 'squeek'],
-        reason: 'I gave you the answer',
+        title: "Electron",
+        question: "Which of the 2 families of particles are electrons in? (grouped by spin)",
+        choices: ['Bosons', 'Fermions', 'Photons', 'Electrons'],
+        reason: 'Integer spin particles are Bosons, and half integer spin particles are Fermions. Electron is half spin.',
         correct: 1, answer: -1, buffer: -1
-      },
-      {
-        title: "Press",
-        question: "Press 4",
-        choices: ['1', '2', '3', '4'],
-        reason: 'Number 4 is 4',
+      }, {
+        title: "Kerbal",
+        question: "Where can superconductor operate?",
+        choices: ['Operating Oven', 'Surface of Sun', 'Middle of Outer Space', 'Family Fridge'],
+        reason: 'Superconductors require extremely low temperatures to operate, even the highest possible temperature is 138K (1-atm).',
+        correct: 2, answer: -1, buffer: -1
+      }, {
+        title: "Heat",
+        question: "What does heat do to conductivity and why?",
+        choices: ['It decreases conductivity because heat will move electrons backwards',
+          'It increases conductivity since electrons can now move faster',
+          'It decreases conductivity because heat will cause more lattice vibrations',
+          'It increases conductivity since protons can now push electrons forward'],
+        reason: 'As temperature increase, lattice vibrates more and collision of atoms and electrons become more frequent, causing electrons to lose more energy, and hence a higher resistance.',
+        correct: 2, answer: -1, buffer: -1
+      }, {
+        title: "Einstein",
+        question: "Which of the following can share the same quantum state?",
+        choices: ['Muon&Muon', 'Neuron&Neuron', 'Neutrino&Neutrino', 'Electrons&Electrons'],
+        reason: 'Note that electron"s" can form cooper pairs, and cooper pairs are composite bosons that can, share quantum state.',
         correct: 3, answer: -1, buffer: -1
-      },
+      }, {
+        title: "Why",
+        question: "Why can electrons flow through a superconductor without losing energy to collisions?",
+        choices: ['Electrons have very little to none kinetic energy at such low temperatures, this cause the Higgs Boson effect that collapses electron\'s wave-function into a single point, enabling it to flow through space without colliding with anything.',
+          'After cooled to near absolute zero, electrons have now moved into the 4th dimensional and is able to phase through matter',
+          'Since the lattice vibrates a lot less, lattices becomes very tidy and clean. Since most of the space in an atom is empty, electrons can just fly right through without hitting anything.',
+          'Superconductors creates a gap in spacetime where electrons can quantum tunnel from one side to another due to the Uncertainty principle, this can only happen at low temperatures since wave functions are smaller',
+          'Electrons under super low temperatures can form Bose-Einstein-Condensate, the 5th state of matter.',
+          'Electrons paired can have energy lower than normal ground energy, while breaking the space-time continuity',
+          'It is still unknown to humanity how superconductors come to be',
+          'We live in a simulation and cooling materials down to such low temperatures activates a bug in the resistance calculation'
+        ],
+        reason: 'Electrons at such low temperatures form cooper pairs that are composite bosons, they can collapse into the same lowest energy ground state (BECs). Which is lower than fermi energy, enabling superconductivity.',
+        correct: 4, answer: -1, buffer: -1
+      }, {
+        title: "WHY?",
+        question: "Why are superconductors important?",
+        choices: ['They can conduct a lot of electricity',
+          'They can transport large amounts of electrons in a very short period of time',
+          'They can create magnetic fields that lasts for eternity',
+          'They have the ability of collapse into a single point, a singularity, and hence the ultimate weapon of humanity.'],
+        reason: 'Superconducting wires can form electromagnets that does not need a power source. Some has tried and the magnet used is still levitating after a decade.',
+        correct: 2, answer: -1, buffer: -1
+      }, {
+        title: "Feedback",
+        question: "Is the website well made?",
+        choices: ['Ye-yes', 'No', 'IT IS THE BEST WEBSITE EVER', 'Well according to the World Organization of Good Website Designs, this website only scores 1/10'],
+        reason: 'I am the one in charge here',
+        correct: 2, answer: -1, buffer: -1
+      }
     ]
   }),
   components: {
@@ -254,7 +315,9 @@ export default Vue.extend({
     Lightning,
     MetallicBonding,
     Attraction,
-    MagnetExp1
+    MagnetExp1,
+    About,
+    Sources
   },
   mounted() {
     this.flux_animation = anime({

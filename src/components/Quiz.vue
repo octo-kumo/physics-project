@@ -16,7 +16,9 @@
       </template>
 
       <v-stepper-step
-          :complete="current>value.length+1"
+          :editable="value.every(q=>q.answer!==-1)"
+          edit-icon="$complete"
+          :complete="value.every(q=>q.answer!==-1)"
           :step="value.length+1">
         Results
       </v-stepper-step>

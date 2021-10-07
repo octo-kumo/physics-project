@@ -14,7 +14,7 @@
             <v-card
                 @click="()=>{if(value.answer===-1)value.buffer=i}"
                 class="choice py-10 fill-height" tile elevation="0"
-                :color="value.answer===-1?(i===value.buffer?(['var(--color-1)', 'var(--color-2)', 'var(--color-3)', 'var(--color-4)'])[i]:'dark'):
+                :color="value.answer===-1?(i===value.buffer?(['var(--color-1)', 'var(--color-2)', 'var(--color-3)', 'var(--color-4)'])[i%4]:'dark'):
                 (i===value.correct?'var(--color-2)':i===value.answer?'var(--color-4)':'dark')">
               <v-card-text style="font-size: 1.2em" class="text-center">{{ c }}</v-card-text>
             </v-card>
