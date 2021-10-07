@@ -8,12 +8,16 @@
 import Vue from "vue";
 import SuperPos from "../markdowns/superposition.md";
 import QuanEnt from "../markdowns/Quantum Entanglement.md";
+import QuanSta from "../markdowns/Quantum State.md";
+import QuantSup from "../markdowns/Quantum Superposition.md";
+import SchrCat from "../markdowns/Schrödinger's cat.md";
+import SuperPrin from "../markdowns/Superposition Principle.md";
 
 export default Vue.extend({
   name: "Superposition",
 
   components: {
-    SuperPos
+    QuanEnt
   }
 });
 </script>
