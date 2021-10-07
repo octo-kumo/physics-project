@@ -14,7 +14,7 @@ import SchrCat from "../markdowns/Schrödinger's cat.md";
 import SuperPrin from "../markdowns/Superposition Principle.md";
 
 export default Vue.extend({
-  name: "Superposition",
+  name: "Quantum Physics",
 
   components: {
     SuperPrin,
