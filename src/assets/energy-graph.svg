@@ -103,6 +103,16 @@
             <g id="sketch-d62554ac">
                 <title>Energy Gap</title>
             </g>
+            <g id="sketch-ecb29619">
+                <title>Expression 9</title>
+                <path fill="#ffffff" stroke="none" paint-order="stroke fill markers" d="" fill-opacity="0.4"/>
+                <g>
+                    <path fill="none" stroke="#ffffff" class="dcg-svg-curve" paint-order="fill stroke markers"
+                          d=" M 234.79411764705884 372.8333333333333 L 234.79411764705884 372.8333333333333 L 234.79411764705884 367.5"
+                          stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2.5"
+                          stroke-opacity="0.9" stroke-dasharray=""/>
+                </g>
+            </g>
         </g>
         <g id="labels-d62554ac">
             <g transform="rotate(0,0,0) translate(302.7764627470135,213.33333333333331)">
@@ -114,6 +124,18 @@
                                   x="0" y="27.377593896484374" text-anchor="start" fill-opacity="0.9">Energy Gap
                             </text>
                         </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+        <g transform="rotate(0,0,0) translate(235.29411764705884,362.66666666666663)">
+            <g class="dcg-svg-label">
+                <g transform="translate(-46.71912069881665,-9.304148356119754)">
+                    <g>
+                        <text fill="#fff" stroke="none" font-family="arial, sans-serif" font-size="15.4px"
+                              font-style="normal" font-weight="400" text-decoration="normal" x="0" y="10.28878779296875"
+                              text-anchor="start" fill-opacity="0.9">Fermi Energy
+                        </text>
                     </g>
                 </g>
             </g>

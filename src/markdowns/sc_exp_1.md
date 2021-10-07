@@ -1,4 +1,5 @@
 <!---->
+
 ## Metal Lattice
 In this metallic lattice of the superconducting material, it has been cooled by liquid helium and hence the vibrations are negligible. 
 
@@ -9,3 +10,4 @@ Free electrons flow in the direction of the potential difference between atoms o
 Atoms will be attracted to the electrons and move slightly towards the electron. 
 
 That makes the region slightly more positively charged. Electrons behind this region will now be attracted to this positively charged region.
+

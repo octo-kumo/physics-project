@@ -100,7 +100,7 @@ import GroverNote from "../markdowns/grover_note.md";
 import QubitStates from "../markdowns/qubit_states.md";
 
 export default Vue.extend({
-  name: "Home",
+  name: "Quantum Computer",
 
   components: {
     Intro,
