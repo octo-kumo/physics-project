@@ -81,7 +81,7 @@ import Intro from "../markdowns/computer_intro.md";
 import GroverNote from "../markdowns/grover_note.md";
 
 export default Vue.extend({
-  name: "Home",
+  name: "Quantum Computer",
 
   components: {
     Foreword,

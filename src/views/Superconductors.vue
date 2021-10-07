@@ -169,6 +169,7 @@
           </v-card>
         </v-hover>
       </section>
+      <MagnetExp1/>
     </v-container>
   </v-container>
 </template>
@@ -189,11 +190,13 @@ import scexp3 from '../markdowns/sc_exp_3.md';
 import scexp4 from '../markdowns/sc_exp_4.md';
 import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
 
+import MagnetExp1 from '../markdowns/sc_magnet_1.md';
+
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
 
 export default Vue.extend({
-  name: 'About',
+  name: 'Superconductor',
   data: () => ({
     lightning_pos: 0,
     temp_pos: 0,
@@ -210,7 +213,8 @@ export default Vue.extend({
     TempGraph,
     Lightning,
     MetallicBonding,
-    Attraction
+    Attraction,
+    MagnetExp1
   },
   mounted() {
     controller
