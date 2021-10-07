@@ -12,9 +12,9 @@ $$
 The coefficients represent the probability of the electron being spin up or down. The probability for a specified configuration is given by the square of the absolute value of the coefficient. So the probabilities should add up to 1. The electron is in one of those two states for sure.
 $$
 \begin{align}
-p_{up}= \mid c_1\mid ^2 \newline
-p_{down}= \mid c_2\mid ^2\newline
-p_{up or down} = p_{down}+p_{up}=1
+p_{up}&= |c_1^2| \newline
+p_{down}&= |c_2^2|\newline
+p_{total} &= p_{down}+p_{up}=1
 
 \end{align}
 $$
