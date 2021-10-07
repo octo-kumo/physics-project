@@ -1,11 +1,13 @@
 <template>
-  <v-stepper v-model="current">
+  <v-stepper v-model="current" non-linear>
     <v-stepper-header>
       <template v-for="(q,i) in value">
         <v-stepper-step
             class="text-truncate"
+            editable
+            edit-icon="$complete"
             :key="q.title"
-            :complete="current>i+1"
+            :complete="q.answer!==-1"
             :rules="[() => q.answer===-1||q.answer===q.correct]"
             :step="i+1">
           {{ q.title }}
@@ -14,7 +16,9 @@
       </template>
 
       <v-stepper-step
-          :complete="current>value.length+1"
+          :editable="value.every(q=>q.answer!==-1)"
+          edit-icon="$complete"
+          :complete="value.every(q=>q.answer!==-1)"
           :step="value.length+1">
         Results
       </v-stepper-step>
@@ -26,8 +30,10 @@
           :step="i+1"
           v-for="(q,i) in value">
         <Question v-model="value[i]"/>
-        <v-btn color="primary" @click="submit(i)">Continue</v-btn>
-        <v-btn text>Cancel</v-btn>
+        <div class="pa-2">
+          <v-btn color="primary" @click="submit(i)">{{ value[i].answer === -1 ? 'Submit' : 'Continue' }}</v-btn>
+          <v-btn text>Cancel</v-btn>
+        </div>
       </v-stepper-content>
       <v-stepper-content :step="value.length+1">
         <v-card color="rgb(0, 0, 0, 0)">
@@ -55,8 +61,8 @@ export default Vue.extend({
   components: {Question},
   methods: {
     submit(i) {
-      this.value[i].answer = this.value[i].buffer;
-      this.current = Math.min(this.value.length + 1, i + 2)
+      if (this.value[i].answer !== -1) this.current = Math.min(this.value.length + 1, i + 2)
+      else this.value[i].answer = this.value[i].buffer;
     }
   }
 });
