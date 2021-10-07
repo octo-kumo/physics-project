@@ -1,6 +1,13 @@
 <template>
   <v-container>
     <SuperPos></SuperPos>
+    <SchrCat />
+    <SuperPrin />
+
+    <QuantState />
+    <QuantSuper />
+    <QuantEntag />
+    
   </v-container>
 </template>
 
@@ -21,7 +28,7 @@ export default Vue.extend({
     QuantState,
     QuantSuper,
     QuantEntag,
-    SchnrCat
+    SchrCat,
   }
 });
 </script>

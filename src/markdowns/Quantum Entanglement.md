@@ -1,3 +1,5 @@
+<efe></efe>
+
 # **Quantum Entanglement**
 
 Quantum entanglement is a physical phenomenon that occurs when a group of particles are generated, interact, or share spatial proximity in a way such that the quantum state of each particle of the group cannot be described independently of the state of the others, including when the particles are separated by a large distance. In another words these group of particles are connected to each other in such a way that knowing one state of one particle, you can determine the other particles states.
