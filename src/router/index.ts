@@ -22,10 +22,12 @@ const routes: Array<RouteConfig> = [
         component: () => import(/* webpackChunkName: "sp" */ '../views/SuperPosition.vue'),
         meta: {icon: 'mdi-atom'}
     },
-    {path: '*', redirect: '/home', meta: {hidden: true}}
+    {path: '*', redirect: 'home', meta: {hidden: true}}
 ]
 
 const router = new VueRouter({
+    mode: 'history',
+    base: '/physics-project',
     routes
 })
 router.beforeEach((to, from, next) => {

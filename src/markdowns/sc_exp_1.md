@@ -1,4 +1,4 @@
-<efe></efe>
+<!---->
 ## Metal Lattice
 In this metallic lattice of the superconducting material, it has been cooled by liquid helium and hence the vibrations are negligible. 
 

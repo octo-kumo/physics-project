@@ -5,19 +5,16 @@
             text-anchor="middle"
             font-weight="bold">+
       </text>
-      <text :x="pos*500*(2-1/n)-(i-1)*500/n" y="250" font-size="300" fill="#aaa9" dominant-baseline="central"
-            text-anchor="middle">+
-      </text>
     </g>
     <g v-for="j in 12" :key="j">
       <g v-for="i in 12" :key="j*i"
          :transform="`translate(${calculate(i*40-10,j*40-10)})`">
-        <circle class="protons" r="8" fill="#f77"></circle>
+        <circle class="protons" r="12" fill="#f77"></circle>
         <text font-size="32" fill="#000" dominant-baseline="central" text-anchor="middle">+</text>
       </g>
     </g>
     <g v-for="i in parseInt(n)" :key="'ve'+i">
-      <circle :cx="pos*500*(2-1/n)-(i-1)*500/n" cy="250" r="10" fill="#55f"></circle>
+      <circle :cx="pos*500*(2-1/n)-(i-1)*500/n" cy="250" r="15" fill="#55f"></circle>
       <text :x="pos*500*(2-1/n)-(i-1)*500/n" y="250" font-size="32" fill="#ffffff" dominant-baseline="central"
             text-anchor="middle">-
       </text>
@@ -46,10 +43,8 @@ export default Vue.extend({
         let dx = this.pos * 500 * (2 - 1 / this.n) - i * 500 / this.n - x, dy = 250 - y;
         let d = Math.hypot(dx, dy);
         let s = -this.strength * (2 - Math.pow(Math.atan(d), 2)) / d;
-        dx *= Math.min(0.8, s);
-        dy *= Math.min(0.8, s);
-        X += dx;
-        Y += dy;
+        X += dx * s;
+        Y += dy * s;
       }
       return `${X},${Y}`;
     },
