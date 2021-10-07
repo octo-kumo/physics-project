@@ -7,6 +7,7 @@
 <script lang="ts">
 import Vue from "vue";
 import SuperPos from "../markdowns/superposition.md";
+import QuanEnt from "../markdowns/Quantum Entanglement.md";
 
 export default Vue.extend({
   name: "Superposition",
