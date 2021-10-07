@@ -47,18 +47,13 @@
         <v-row no-gutters align="stretch">
           <v-col align="center" justify="center">
             <v-card class="pa-2" outlined tile>
-              <v-img contain max-width="225" src="@/assets/shield.png" />
+              <v-img contain max-width="225" :src="parts[page - 1].img" />
             </v-card>
           </v-col>
           <v-col class="d-flex">
             <v-card class="pa-2" outlined tile>
-              <v-card-title>Shell</v-card-title>
-              <v-card-text
-                >It is installed to isolate the system from the rest of the
-                environment. It helps to maintain the low temperature and shield
-                the internal components from any stray electromagnetic
-                waves</v-card-text
-              >
+              <v-card-title>{{parts[page - 1].title}}</v-card-title>
+              <v-card-text>{{parts[page - 1].desc}}</v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -88,6 +83,36 @@ export default Vue.extend({
   },
 
   data: () => ({
+    page: 1,
+
+    parts: [
+      {
+        title: "Shell",
+        desc: "It is installed to isolate the system from the rest of the environment. It helps to maintain the low temperature and shield the internal components from any stray electromagnetic waves",
+        img: require("@/assets/shell.png"),
+      },
+      {
+        title: "Plates",
+        desc: " The plates hold all the components in place so that they can decrease in temperature. From top to bottom, the plates decrease in temperature from ~4 Kelvin at the topmost plate to ~0.15K at the bottom most plate (Colder than the temperature in outer space)",
+        img: require("@/assets/plates.png"),
+      },
+      {
+        title: "Mixing Chamber",
+        desc: "In the chamber, helium-3 and helium-4 are mixed together, such that they act as a cooling system to conduct heat away from the processor to allow it to operate at temperatures as low as 0.15 K.",
+        img: require("@/assets/mixing_chamber.png"),
+      },
+      {
+        title: "Cables and Connectors",
+        desc: "These cables carries signals that are read from the quantum processor, they are cooled to superconducting states in order to minimize energy loss while transmitting data",
+        img: require("@/assets/cables.png"),
+      },
+      {
+        title: "Cryoperm Shield",
+        desc: "The shield houses the quantum processor where the quibts are located and also blocks any external electromagnetic radiation from interfering with the processor",
+        img: require ("@/assets/shield.png"),
+      },
+    ],
+
     years: [
       {
         color: "cyan",
