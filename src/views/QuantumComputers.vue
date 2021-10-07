@@ -88,6 +88,8 @@
           </v-expansion-panel-content>
         </v-expansion-panel>
       </v-expansion-panels>
+
+      <QuantumFuture />
     </v-container>
   </v-container>
 </template>
@@ -98,6 +100,7 @@ import Computer from "../markdowns/quantum_computer.md";
 import Intro from "../markdowns/computer_intro.md";
 import GroverNote from "../markdowns/grover_note.md";
 import QubitStates from "../markdowns/qubit_states.md";
+import QuantumFuture from "../markdowns/future_quantum_computer.md"
 
 export default Vue.extend({
   name: "Quantum Computer",
@@ -107,6 +110,7 @@ export default Vue.extend({
     Computer,
     GroverNote,
     QubitStates,
+    QuantumFuture,
   },
 
   data: () => ({

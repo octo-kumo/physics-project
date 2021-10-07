@@ -10,4 +10,4 @@ It's much more complicated than that. Grover’s algorithm doesn’t
             searched and false otherwise. There are also some restrictions on
             the function. Hence, in general, we might not be able to apply the
             algorithm to search all types of items unless they satisfy the
-            required criteria.
+            criteria mentioned.
