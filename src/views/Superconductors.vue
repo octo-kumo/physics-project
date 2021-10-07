@@ -179,6 +179,9 @@
           </v-col>
         </v-row>
       </section>
+      <section class="my-5 pa-5">
+        <MagnetExp2/>
+      </section>
       <v-divider class="my-5"/>
       <h1>Quiz</h1>
       <Quiz v-model="questions"/>
@@ -221,6 +224,7 @@ import scexp3 from '../markdowns/sc_exp_3.md';
 import scexp4 from '../markdowns/sc_exp_4.md';
 import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
 import MagnetExp1 from '../markdowns/sc_magnet_1.md';
+import MagnetExp2 from '../markdowns/sc_magnet_2.md';
 import About from '../markdowns/sc_about.md';
 import Sources from '../markdowns/sc_sources.md';
 
@@ -315,7 +319,7 @@ export default Vue.extend({
     Lightning,
     MetallicBonding,
     Attraction,
-    MagnetExp1,
+    MagnetExp1, MagnetExp2,
     About,
     Sources
   },
