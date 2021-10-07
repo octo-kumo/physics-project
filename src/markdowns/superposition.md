@@ -18,7 +18,7 @@ p_{total} &= p_{down}+p_{up}=1
 
 \end{align}
 $$
- As a whole a particle can have any position  so that there are different configurations which have any value of the position *x*. These are written:
+ As a whole a particle can have any position  so that there are different configurations which have any value of the position $x$. These are written:
 $$
 |x\rangle
 $$
@@ -26,7 +26,7 @@ The principle of superposition guarantees that there are states which are arbitr
 $$
 \sum_{x}{} \psi(x)|x\rangle
 $$
-This sum is defined only if the index *x* is discrete. If the index is over $\R$, then the sum is replaced by an integral. The quantity ![\psi (x)](https://wikimedia.org/api/rest_v1/media/math/render/svg/a596a1fb4130a47f6b88c66150497338bd6cbccc) is called the wavefunction of the particle. If we consider a qubit with both position and spin, the state is a superposition of all possibilities for both:
+This sum is defined only if the index $x$ is discrete. If the index is over $\R$, then the sum is replaced by an integral. The quantity $\psi$ is called the wavefunction of the particle. If we consider a qubit with both position and spin, the state is a superposition of all possibilities for both:
 $$
 \sum_{x}{} \psi_+(x)|x,\uparrow\rangle+\psi_-(x)|x,\downarrow\rangle
 $$

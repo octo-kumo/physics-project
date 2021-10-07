@@ -9,42 +9,61 @@
     </v-flex>
 
     <v-container>
-      <Foreword class="pa-10"></Foreword>
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="pa-4"
+        align="center"
+        :elevation="hover ? 10 : 0"
+      >
+        <v-card-title class="justify-center"> History </v-card-title>
+        <v-timeline class="pa-10">
+          <v-timeline-item
+            v-for="(year, i) in years"
+            :key="i"
+            :color="year.color"
+            small
+          >
+            <template v-slot:opposite>
+              <span
+                :class="`headline font-weight-bold ${year.color}--text`"
+                v-text="year.year"
+              ></span>
+            </template>
 
-      <v-timeline class="pa-10">
-        <v-timeline-item
-          v-for="(year, i) in years"
-          :key="i"
-          :color="year.color"
-          small
-        >
-          <template v-slot:opposite>
-            <span
-              :class="`headline font-weight-bold ${year.color}--text`"
-              v-text="year.year"
-            ></span>
-          </template>
+            <div class="py-4">
+              {{ year.text }}
+            </div>
 
-          <div class="py-4">
-            {{ year.text }}
-          </div>
-
-          <v-img
-            v-if="year.img"
-            max-height="300"
-            max-width="273"
-            :src="year.img"
-          ></v-img>
-        </v-timeline-item>
-      </v-timeline>
+            <v-img
+              v-if="year.img"
+              max-height="300"
+              max-width="273"
+              :src="year.img"
+            ></v-img>
+          </v-timeline-item>
+        </v-timeline>
+      </v-card>
 
       <Intro id="intro"></Intro>
+
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header> Note </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            There are also other ways of representing qubit states, such as the
+            polarization of a photon (horizontal or vertical), or the spin of a
+            nuclei (1/2 or -1/2)
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
+
+      <QubitStates />
 
       <v-container fluid class="pa-0">
         <v-row no-gutters align="stretch">
           <v-col align="center" justify="center">
             <v-card class="pa-2" outlined tile>
-              <v-img contain max-width="225" :src="parts[page - 1].img" />
+              <v-img contain max-width="200" :src="parts[page - 1].img" />
             </v-card>
           </v-col>
           <v-col class="d-flex">
@@ -54,8 +73,8 @@
             </v-card>
           </v-col>
         </v-row>
-        <v-row no-gutters align="center" justify="center">
-          <v-pagination v-model="page" :length="5"></v-pagination>
+        <v-row no-gutters align="center" justify="center" class="pt-2">
+          <v-pagination v-model="page" :length="6"></v-pagination>
         </v-row>
       </v-container>
 
@@ -76,24 +95,30 @@
 <script lang="ts">
 import Vue from "vue";
 import Computer from "../markdowns/quantum_computer.md";
-import Foreword from "../markdowns/computer_foreword.md";
 import Intro from "../markdowns/computer_intro.md";
 import GroverNote from "../markdowns/grover_note.md";
+import QubitStates from "../markdowns/qubit_states.md";
 
 export default Vue.extend({
   name: "Home",
 
   components: {
-    Foreword,
     Intro,
     Computer,
     GroverNote,
+    QubitStates,
   },
 
   data: () => ({
     page: 1,
 
     parts: [
+      {
+        title: "Anatomy",
+        desc: "There are many setups for a quantum computer. Here's the dilution refrigerator setup, which is quite commonly used.",
+        img: require("@/assets/anatomy.png"),
+      },
+
       {
         title: "Shell",
         desc: "It is installed to isolate the system from the rest of the environment. It helps to maintain the low temperature and shield the internal components from any stray electromagnetic waves",
