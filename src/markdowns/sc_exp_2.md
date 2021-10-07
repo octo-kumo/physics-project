@@ -2,7 +2,7 @@
 
 ## Quantum Physics
 
-However, simple electrostatic interactions is not enough to explain the weird phenomenon. Just like many other things, if we dig deep enough, we end up in the quantum realm.
+However, simple electrostatic interactions is not enough to explain the weird phenomenon.
 
 We first have to look at the two classes of elemental particles, **Bosons** and **Fermions**.
 

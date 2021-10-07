@@ -48,10 +48,10 @@
                   class="pa-4"
                   :elevation="hover?10:0">
             <v-row>
-              <v-col cols="4" class="pa-0">
+              <v-col cols="12" sm="6" md="4" class="pa-0">
                 <Lightning :pos="lightning_pos"/>
               </v-col>
-              <v-col cols="8">
+              <v-col cols="12" sm="6" md="8">
                 <v-card-title>Insulator</v-card-title>
                 <v-card-text>On the other hand, if we had an insulator, its electrons are strongly bound to the nucleus,
                   hence electrons can not be displaced easily. This means that electrons can not enter or leave the
@@ -118,10 +118,10 @@
                   class="pa-4"
                   :elevation="hover?10:0">
             <v-row>
-              <v-col cols="4" class="pa-0">
+              <v-col cols="12" sm="6" md="4" class="pa-0">
                 <Attraction :pos="attraction_pos"/>
               </v-col>
-              <v-col cols="8">
+              <v-col cols="12" sm="6" md="8">
                 <scexp1/>
               </v-col>
             </v-row>
@@ -130,8 +130,11 @@
       </section>
       <scexp2/>
       <v-row justify="center">
-        <v-col>
+        <v-col cols="12" md="4">
           <HalfSpin/>
+        </v-col>
+        <v-col cols="12" md="8">
+          <scexpHalfSpin/>
         </v-col>
       </v-row>
       <section class="my-5">
@@ -140,10 +143,10 @@
                   class="pa-4"
                   :elevation="hover?10:0">
             <v-row>
-              <v-col cols="4" class="pa-0">
+              <v-col cols="12" sm="6" md="4" class="pa-0">
                 <Attraction :pos="attraction2_pos" n="5" strength="20"/>
               </v-col>
-              <v-col cols="8">
+              <v-col cols="12" sm="6" md="8">
                 <scexp3/>
               </v-col>
             </v-row>
@@ -156,10 +159,10 @@
                   class="pa-4"
                   :elevation="hover?10:0">
             <v-row>
-              <v-col cols="8">
+              <v-col cols="12" sm="6" md="8">
                 <scexp4/>
               </v-col>
-              <v-col cols="4">
+              <v-col cols="12" sm="6" md="4">
                 <EnergyGraph/>
               </v-col>
             </v-row>
@@ -184,6 +187,7 @@ import scexp1 from '../markdowns/sc_exp_1.md';
 import scexp2 from '../markdowns/sc_exp_2.md';
 import scexp3 from '../markdowns/sc_exp_3.md';
 import scexp4 from '../markdowns/sc_exp_4.md';
+import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
 
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
@@ -200,6 +204,7 @@ export default Vue.extend({
     scbg,
     scintro,
     scexp1, scexp2, scexp3, scexp4,
+    scexpHalfSpin,
     EnergyGraph,
     HalfSpin,
     TempGraph,

@@ -8,7 +8,7 @@
     </g>
     <g v-for="j in 12" :key="j">
       <g v-for="i in 12" :key="j*i"
-         :transform="`translate(${calculate(i*40-10,j*40-10)})`">
+         :transform="calculate(i*40-10,j*40-10)">
         <circle class="protons" r="12" fill="#f77"></circle>
         <text font-size="32" fill="#000" dominant-baseline="central" text-anchor="middle">+</text>
       </g>
@@ -46,7 +46,7 @@ export default Vue.extend({
         X += dx * s;
         Y += dy * s;
       }
-      return `${X},${Y}`;
+      return `translate(${X},${Y})`;
     },
   }
 });
