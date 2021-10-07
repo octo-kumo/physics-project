@@ -1,12 +1,20 @@
 <template>
-  <h1>OWO HOME</h1>
+  <v-container class="pa-10">
+    <Intro />
+  </v-container>
+  
 </template>
 
 <script>
 import Vue from 'vue';
+import Intro from '../markdowns/foreword.md'
 
 export default Vue.extend({
-  name: "Home"
+  name: "Home",
+
+  components: {
+    Intro,
+  },
 });
 
 </script>
