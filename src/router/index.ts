@@ -6,7 +6,7 @@ Vue.use(VueRouter)
 const routes: Array<RouteConfig> = [
     {
         path: '/home',
-        name: 'Introduction',
+        name: 'Quantum Computers',
         component: () => import(/* webpackChunkName: "qq" */ '../views/QuantumComputers.vue'),
         meta: {icon: 'mdi-home'}
     },

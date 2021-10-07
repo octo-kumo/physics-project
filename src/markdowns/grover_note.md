@@ -1,4 +1,4 @@
-<span />
+<!---->
 
 It's much more complicated than that. Grover’s algorithm doesn’t
             search through lists, it searches through *function inputs*.
