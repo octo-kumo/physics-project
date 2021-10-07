@@ -1,12 +1,9 @@
 <template>
   <v-container fluid class="pa-0">
     <v-flex xs12 sm12>
-      <v-parallax
-        height="300"
-        src="https://techhq.com/wp-content/uploads/2019/09/40645906341_c38b22d693_k.jpg"
-      >
+      <v-parallax height="200" src="@/assets/computer_bg.jpg">
         <v-layout column align-center justify-center>
-          <h1>Quantum Computer</h1>
+          <h1 id="main-title">Quantum Computer</h1>
         </v-layout>
       </v-parallax>
     </v-flex>
@@ -52,8 +49,8 @@
           </v-col>
           <v-col class="d-flex">
             <v-card class="pa-2" outlined tile>
-              <v-card-title>{{parts[page - 1].title}}</v-card-title>
-              <v-card-text>{{parts[page - 1].desc}}</v-card-text>
+              <v-card-title>{{ parts[page - 1].title }}</v-card-title>
+              <v-card-text>{{ parts[page - 1].desc }}</v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -63,6 +60,15 @@
       </v-container>
 
       <Computer id="computer"></Computer>
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header> Note </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <v-card> </v-card>
+            <GroverNote id="note"></GroverNote>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-container>
   </v-container>
 </template>
@@ -72,6 +78,7 @@ import Vue from "vue";
 import Computer from "../markdowns/quantum_computer.md";
 import Foreword from "../markdowns/computer_foreword.md";
 import Intro from "../markdowns/computer_intro.md";
+import GroverNote from "../markdowns/grover_note.md";
 
 export default Vue.extend({
   name: "Home",
@@ -80,6 +87,7 @@ export default Vue.extend({
     Foreword,
     Intro,
     Computer,
+    GroverNote,
   },
 
   data: () => ({
@@ -109,7 +117,7 @@ export default Vue.extend({
       {
         title: "Cryoperm Shield",
         desc: "The shield houses the quantum processor where the quibts are located and also blocks any external electromagnetic radiation from interfering with the processor",
-        img: require ("@/assets/shield.png"),
+        img: require("@/assets/shield.png"),
       },
     ],
 
@@ -166,5 +174,10 @@ export default Vue.extend({
 
 .carousel-inner > .item {
   height: 400px;
+}
+
+#main-title {
+  padding: 1em 2em;
+  backdrop-filter: blur(10px) brightness(60%);
 }
 </style>

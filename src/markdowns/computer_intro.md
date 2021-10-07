@@ -15,7 +15,7 @@ A quantum computer solves computational problems by exploiting the properties of
 
 Quantum computing harnesses the phenomena of quantum mechanics to deliver a huge leap forward in computation to solve certain problems. In particular, it relies on physical phenomena such as quantum entanglement, interference and superposition. In other words, we are trying to use the universe itself to run compute results that we are interested in.
 
-Note: Beyond this part of the guide, you will need some basic understanding on superposition and quantum entanglement, which are explained here.
+Note: Beyond this part of the guide, you will need some basic understanding on superposition and quantum entanglement, which are explained [here](https://octo-kumo.github.io/physics-project/cat).
 
 ### The Qubit
 
@@ -35,6 +35,18 @@ Therefore, a quantum computer with $N$ qubits, will be able to represent $2^N$ s
 
 Hence, we can perform many operations in just a single step. However, how are we supposed to interpret the results? Recall that when we observe the qubits that are in a superposition state, it will immediately collapse into one of the possible states based on probability. Hence, we can only read a single state output from our quantum system. So then, how are we supposed to read the results form the collapsed state? 
 
+<br />
+<br />
+
+<figure align="center">
+<img src="https://miro.medium.com/max/1400/0*xllJMzdAuDlba2xL" alt="drawing" width="900" />
+
+</figure>
+
+<br />
+<br />
+
+
 ### Quantum Algorithm
 
 The answer lies in the quantum algorithm $\textendash$​ the instructions and operations that we have applied onto the quantum system. The algorithm is designed in a way such that all of the incorrect states (states representing the wrong answers) destructively interfere (just like how waves do) and "cancel" each other out. This leaves us with a high probability of observing the desired state (the state that represents the correct answer). 
@@ -43,9 +55,11 @@ Due to its randomness nature, quantum computation is inherently error prone. Hen
 
 It should also be noted that quantum computers are often used to solve a class of problems known as NP-problems. The solutions to these problems can be easily verified using classical computers in polynomial time. However, the time required to find these solutions will be exponential, which will take millions of years for a classical computer to solve, but only a few minutes for quantum computers. Since they are easily verifiable, we can check with certainty if the solution we obtain from the quantum computer is correct. For example integer factorization is a NP-problem. Checking if some numbers are a factor of a number is easy: we just need to multiply them. However, finding the factors for a number is generally *very* difficult. 
 
-![The Math behind Quantum Computing — Qubits and Superposition | by Ryan Lam  | DataDrivenInvestor](https://miro.medium.com/max/1400/0*xllJMzdAuDlba2xL)
 
+<br />
+<br />
 
 # Anatomy of A *Simplified* Quantum Computer
 
 There are many setups for a quantum computer. Here's the *dilution refrigerator* setup, which is quite commonly used.
+

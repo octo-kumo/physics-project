@@ -4,7 +4,7 @@
       <v-parallax
           height="200" src="https://www.sciencealert.com/images/2019-06/processed/superconductivity_topic_1024.jpg">
         <v-layout column align-center justify-center>
-          <h1 id="main-title" class="rounded">Super Conductors</h1>
+          <h1 id="main-title" class="rounded">Superconductors</h1>
         </v-layout>
       </v-parallax>
     </v-flex>

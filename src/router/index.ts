@@ -12,13 +12,13 @@ const routes: Array<RouteConfig> = [
     },
     {
         path: '/super',
-        name: 'Super Conductors',
+        name: 'Superconductors',
         component: () => import(/* webpackChunkName: "sc" */ '../views/Superconductors.vue'),
         meta: {icon: 'mdi-magnet-on'}
     },
     {
         path: '/cat',
-        name: 'Super Position',
+        name: 'Superposition',
         component: () => import(/* webpackChunkName: "sp" */ '../views/SuperPosition.vue'),
         meta: {icon: 'mdi-atom'}
     },

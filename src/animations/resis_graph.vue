@@ -76,7 +76,7 @@ export default Vue.extend({
   },
   computed: {
     state() {
-      return this.pos > 0.6 ? "Super Conductor" : "Normal Conductor";
+      return this.pos > 0.6 ? "Superconductor" : "Normal Conductor";
     }
   }
 });

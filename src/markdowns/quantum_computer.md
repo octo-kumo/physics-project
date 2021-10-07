@@ -1,5 +1,8 @@
 <efe></efe>
 
+<br />
+<br />
+
 # Applications Of Quantum Computer
 
 ### Grover's Algorithm
@@ -8,9 +11,19 @@ Problem: Were trying to check if an item is present in a list. Given that the it
 
 We can use Grover's algorithm to solve the problem in about $\sqrt{N}$ searches. To put things in perspective, if we have two billions of items to be searched, our classical computer will need to search through a billion of them on average while Grover's Algorithm will only need to perform number of operations in the order of magnitude of ten thousands $-$ significantly faster than using a classical computer.
 
-To put it very briefly, each possible state of the qubits such as `0010` will correspond to an item in the list. The algorithm creates a uniform superposition over all possibilities and repeatedly destructively interferes states that are not solutions. As a result, there is a high probability ($\ge 0.5$) that the state we observe when the superposition collapses is the state corresponding to the item we are searching for.
+<br />
+<br />
 
-Note: Its much more complicated than that. Grover’s algorithm doesn’t search through lists, it searches through *function inputs*. Grover’s algorithm takes a function, searches through the *implicit* list of possible inputs to that function, and (with high probability) returns the *single* input that causes the function to return true. Hence, to use the algorithm, you will need to find a suitable function that will return true only for the item to be searched and false otherwise. There are also some restrictions on the function. Hence, in general, we might not be able to apply the algorithm to search all types of items unless they satisfy the required criteria.
+<figure align="center">
+<img src="../assets/grover.jpg" alt="drawing" width="400" />
+<figcaption><i>Grover's algorithm increases the amplitude of the state corresponding to the answer. Recall that probability is the square of amplitude. Hence, the probability is increased too.</i></figcaption>
+
+</figure>
+
+<br />
+<br />
+
+To put it very briefly, each possible state of the qubits such as `0010` will correspond to an item in the list. The algorithm creates a uniform superposition over all possibilities and repeatedly destructively interferes states that are not solutions. As a result, there is a high probability ($\ge 0.5$) that the state we observe when the superposition collapses is the state corresponding to the item we are searching for.
 
 
 

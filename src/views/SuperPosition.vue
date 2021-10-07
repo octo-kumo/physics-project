@@ -9,7 +9,7 @@ import Vue from "vue";
 import SuperPos from "../markdowns/superposition.md";
 
 export default Vue.extend({
-  name: "Super Position",
+  name: "Superposition",
 
   components: {
     SuperPos
