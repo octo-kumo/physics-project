@@ -13,7 +13,7 @@
         style="transition: box-shadow 0.5s"
         class="pa-4"
         align="center"
-        :elevation="hover ? 10 : 0"
+        :elevation="10"
       >
         <v-card-title class="justify-center"> History </v-card-title>
         <v-timeline class="pa-10">
@@ -44,52 +44,116 @@
         </v-timeline>
       </v-card>
 
-      <Intro id="intro"></Intro>
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="mt-5 pa-10"
+        :elevation="10"
+      >
+        <Intro id="intro"></Intro>
+      </v-card>
 
-      <v-expansion-panels>
-        <v-expansion-panel>
-          <v-expansion-panel-header> Note </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            There are also other ways of representing qubit states, such as the
-            polarization of a photon (horizontal or vertical), or the spin of a
-            nuclei (1/2 or -1/2)
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="mt-5 pa-10"
+        :elevation="10"
+      >
+        <ComputerWorks/>
 
-      <QubitStates />
+        <v-expansion-panels>
+          <v-expansion-panel>
+            <v-expansion-panel-header> Note </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              There are also other ways of representing qubit states, such as
+              the polarization of a photon (horizontal or vertical), or the spin
+              of a nuclei (1/2 or -1/2)
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
 
-      <v-container fluid class="pa-0">
-        <v-row no-gutters align="stretch">
-          <v-col align="center" justify="center">
-            <v-card class="pa-2" outlined tile>
-              <v-img contain max-width="200" :src="parts[page - 1].img" />
-            </v-card>
-          </v-col>
-          <v-col class="d-flex">
-            <v-card class="pa-2" outlined tile>
-              <v-card-title>{{ parts[page - 1].title }}</v-card-title>
-              <v-card-text>{{ parts[page - 1].desc }}</v-card-text>
-            </v-card>
-          </v-col>
-        </v-row>
-        <v-row no-gutters align="center" justify="center" class="pt-2">
-          <v-pagination v-model="page" :length="6"></v-pagination>
-        </v-row>
-      </v-container>
+        <QubitStates />
+      </v-card>
 
-      <Computer id="computer"></Computer>
-      <v-expansion-panels>
-        <v-expansion-panel>
-          <v-expansion-panel-header> Note </v-expansion-panel-header>
-          <v-expansion-panel-content>
-            <v-card> </v-card>
-            <GroverNote id="note"></GroverNote>
-          </v-expansion-panel-content>
-        </v-expansion-panel>
-      </v-expansion-panels>
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="mt-5 pa-10"
+        :elevation="10"
+      >
+        <v-container>
+          <h3>Anatomy of A <i>Simplified</i> Quantum Computer</h3>
 
-      <QuantumFuture />
+          <v-row no-gutters align="stretch" class="pt-5">
+            <v-col align="center" justify="center">
+              <v-card outlined tile>
+                <v-img contain max-width="200" :src="parts[page - 1].img" />
+              </v-card>
+            </v-col>
+            <v-col class="d-flex">
+              <v-card outlined tile>
+                <v-card-title>{{ parts[page - 1].title }}</v-card-title>
+                <v-card-text>{{ parts[page - 1].desc }}</v-card-text>
+              </v-card>
+            </v-col>
+          </v-row>
+          <v-row no-gutters align="center" justify="center" class="pt-2">
+            <v-pagination v-model="page" :length="6"></v-pagination>
+          </v-row>
+        </v-container>
+      </v-card>
+
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="mt-5 pa-10"
+        :elevation="10"
+      >
+        <ComputerAlgo />
+      </v-card>
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="mt-5 pa-10"
+        :elevation="10"
+      >
+        <Computer id="computer"></Computer>
+        <v-expansion-panels>
+          <v-expansion-panel>
+            <v-expansion-panel-header> Note </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <v-card> </v-card>
+              <GroverNote id="note"></GroverNote>
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+        </v-expansion-panels>
+
+        <br />
+        <br />
+
+        <figure align="center">
+          <img src="../assets/grover.jpg" alt="drawing" width="400" />
+          <figcaption>
+            <i
+              >Grover's algorithm increases the amplitude of the state
+              corresponding to the answer. Recall that probability is the square
+              of amplitude. Hence, the probability is increased too.</i
+            >
+          </figcaption>
+        </figure>
+
+        <br />
+        <body>
+          Thus, it would only take a few repetions to confirm that we have found
+          the element in the database. Grover's algorithm can be used in
+          database applications to quickly search for an element in the
+          database. It can also be used to speed up the time required to solve
+          sudoku puzzles.
+        </body>
+      </v-card>
+
+      <v-card
+        style="transition: box-shadow 0.5s"
+        class="mt-5 pa-10"
+        :elevation="10"
+      >
+        <QuantumFuture />
+      </v-card>
     </v-container>
   </v-container>
 </template>
@@ -100,7 +164,9 @@ import Computer from "../markdowns/quantum_computer.md";
 import Intro from "../markdowns/computer_intro.md";
 import GroverNote from "../markdowns/grover_note.md";
 import QubitStates from "../markdowns/qubit_states.md";
-import QuantumFuture from "../markdowns/future_quantum_computer.md"
+import QuantumFuture from "../markdowns/future_quantum_computer.md";
+import ComputerWorks from "../markdowns/computer_works.md";
+import ComputerAlgo from "../markdowns/computer_algo.md";
 
 export default Vue.extend({
   name: "Quantum Computer",
@@ -108,6 +174,8 @@ export default Vue.extend({
   components: {
     Intro,
     Computer,
+    ComputerWorks,
+    ComputerAlgo,
     GroverNote,
     QubitStates,
     QuantumFuture,
