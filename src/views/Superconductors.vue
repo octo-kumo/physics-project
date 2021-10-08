@@ -346,31 +346,31 @@ export default Vue.extend({
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        }).setPin('#lightning').on("progress", (event: SceneProgressEvent<'progress'>) => this.lightning_pos = event.progress))
+        }).setPin('#lightning').on("progress", async (event: SceneProgressEvent<'progress'>) => this.lightning_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#temp_graph',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        }).setPin('#temp_graph').on("progress", (event: SceneProgressEvent<'progress'>) => this.temp_pos = event.progress))
+        }).setPin('#temp_graph').on("progress", async (event: SceneProgressEvent<'progress'>) => this.temp_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#attraction',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        }).setPin('#attraction').on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction_pos = event.progress))
+        }).setPin('#attraction').on("progress", async (event: SceneProgressEvent<'progress'>) => this.attraction_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#attraction2',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        }).setPin('#attraction2').on("progress", (event: SceneProgressEvent<'progress'>) => this.attraction2_pos = event.progress))
+        }).setPin('#attraction2').on("progress", async (event: SceneProgressEvent<'progress'>) => this.attraction2_pos = event.progress))
         .addScene(new ScrollMagic.Scene({
           triggerElement: '#flex-animation',
           triggerHook: 'onLeave',
           offset: -94,
           duration: 1000
-        }).setPin('#flex-animation').on("progress", (event: SceneProgressEvent<'progress'>) => this.flux_animation.seek(event.progress * this.flux_animation.duration)))
+        }).setPin('#flex-animation').on("progress", async (event: SceneProgressEvent<'progress'>) => this.flux_animation.seek(event.progress * this.flux_animation.duration)))
   }
 });
 </script>
@@ -413,4 +413,15 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+/*.float {*/
+/*  position: sticky !important;*/
+/*  inset: 0 !important;*/
+/*  top: 94px !important;*/
+/*}*/
+
+/*.scrollmagic-pin-spacer {*/
+/*  padding-top: 0 !important;*/
+/*  padding-bottom: 1000px !important;*/
+/*}*/
 </style>
