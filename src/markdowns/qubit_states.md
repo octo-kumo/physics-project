@@ -35,4 +35,4 @@ To change a qubit to an up state, we expose it to a pulse of microwave with a sp
 
 While the electron is transitioning from the down state to the up state, we can stop it at any position, and that would create a superposition state for the qubit, with different phases for the states $0$ and $1$. Entanglement works similarly but exposing two or more qubits to microwaves at the same time.
 
-All in all, the qubits must be handled in a very isolated environment that is cooled to temperatures less than 1 Kelvin and isolated from any electromagnetic radiation.
+All in all, the qubits must be handled in a very isolated environment that is cooled to temperatures less than 1 Kelvin and isolated from any electromagnetic radiation for the quantum computer to function properly.
