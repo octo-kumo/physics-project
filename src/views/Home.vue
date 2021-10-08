@@ -1,19 +1,21 @@
 <template>
   <v-container fluid class="pa-0">
+    <div id="background-1">
+      <SystemOne id="background-1-img"></SystemOne>
+    </div>
     <transition name="fade">
-      <div id="background-1">
-        <SystemOne id="background-1-img"></SystemOne>
-      </div>
+      <v-bottom-navigation style="position:sticky;top:0;" v-if="animation_done||has_scrolled">
+        <v-btn v-for="route in routes"
+               :key="route.path"
+               :to="route.path">
+          <span>{{ route.name }}</span>
+          <v-icon>{{ route.meta.icon }}</v-icon>
+        </v-btn>
+      </v-bottom-navigation>
     </transition>
-    <v-bottom-navigation>
-      <v-btn v-for="route in routes"
-             :key="route.path"
-             :to="route.path">
-        <span>{{ route.name }}</span>
-        <v-icon>{{ route.meta.icon }}</v-icon>
-      </v-btn>
-    </v-bottom-navigation>
-    <HomeIntro/>
+    <v-container>
+      <HomeIntro/>
+    </v-container>
   </v-container>
 </template>
 
@@ -27,6 +29,7 @@ import {RouteRecordPublic} from "vue-router";
 export default Vue.extend({
   name: "Home",
   data: () => ({
+    has_scrolled: false,
     animation_done: false
   }),
   components: {
@@ -38,6 +41,7 @@ export default Vue.extend({
     }
   },
   mounted() {
+    document.addEventListener('scroll', () => this.has_scrolled = true);
     const self = this;
     let timeline = anime.timeline({
       autoplay: true
@@ -86,12 +90,13 @@ export default Vue.extend({
   height: 100%;
 }
 
-#background-2-img {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
+  opacity: 0;
 }
 </style>
 <style>

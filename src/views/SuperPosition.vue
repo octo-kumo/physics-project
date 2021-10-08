@@ -126,6 +126,7 @@ import QuantSuper from "../markdowns/Quantum Superposition.md";
 import SchrCat from "../markdowns/Schrödinger's cat.md";
 import SuperPrin from "../markdowns/Superposition Principle.md";
 import Quiz from "../components/Quiz.vue";
+import anime from 'animejs/lib/anime.es.js';
 
 export default Vue.extend({
   name: "Quantum Physics",
