@@ -1,19 +1,17 @@
 <template>
   <v-container>
-    <SuperPos></SuperPos>
-    <SchrCat />
-    <SuperPrin />
+    <SchrCat/>
+    <SuperPrin/>
 
-    <QuantState />
-    <QuantSuper />
-    <QuantEntag />
-    
+    <QuantState/>
+    <QuantSuper/>
+    <QuantEntag/>
+
   </v-container>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import SuperPos from "../markdowns/superposition.md";
 import QuantEntag from "../markdowns/Quantum Entanglement.md";
 import QuantState from "../markdowns/Quantum State.md";
 import QuantSuper from "../markdowns/Quantum Superposition.md";
@@ -21,7 +19,7 @@ import SchrCat from "../markdowns/Schrödinger's cat.md";
 import SuperPrin from "../markdowns/Superposition Principle.md";
 
 export default Vue.extend({
-  name: "Quantum Physics",
+  name: "QuantumPhysics",
 
   components: {
     SuperPrin,

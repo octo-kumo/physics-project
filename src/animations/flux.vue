@@ -853,7 +853,7 @@ import Vue from "vue";
 import anime from "animejs/lib/anime.es.js";
 
 export default Vue.extend({
-  name: "Flex",
+  name: "flux-animation",
   props: {
     pos: Number
   },

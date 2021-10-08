@@ -51,6 +51,7 @@ let shapes = [
 ]
 
 export default Vue.extend({
+  name: "resis-graph",
   props: {
     pos: Number
   },

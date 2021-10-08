@@ -180,7 +180,14 @@
         </v-row>
       </section>
       <section class="my-5 pa-5">
-        <MagnetExp2/>
+        <v-row id="flex-animation">
+          <v-col cols="12" sm="8">
+            <MagnetExp2/>
+          </v-col>
+          <v-col cols="12" sm="4">
+            <v-img src="@/assets/superconducting_qubit.png"/>
+          </v-col>
+        </v-row>
       </section>
       <v-divider class="my-5"/>
       <h1>Quiz</h1>

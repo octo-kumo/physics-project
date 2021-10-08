@@ -25,6 +25,7 @@
 import Vue from "vue";
 
 export default Vue.extend({
+  name: "attraction",
   props: {
     strength: {
       default: 100

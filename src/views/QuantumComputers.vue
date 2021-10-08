@@ -193,7 +193,7 @@ import Quiz from "../components/Quiz.vue";
 import Sources from "../markdowns/computer_sources.md";
 
 export default Vue.extend({
-  name: "Quantum Computer",
+  name: "QuantumComputer",
 
   components: {
     Intro,
