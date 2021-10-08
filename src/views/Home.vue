@@ -3,17 +3,15 @@
     <div id="background-1">
       <SystemOne id="background-1-img"></SystemOne>
     </div>
-    <transition name="fade">
-      <v-bottom-navigation style="position:sticky;top:0;" v-if="animation_done||has_scrolled">
-        <v-btn v-for="route in routes"
-               :key="route.path"
-               :to="route.path">
-          <span>{{ route.name }}</span>
-          <v-icon>{{ route.meta.icon }}</v-icon>
-        </v-btn>
-      </v-bottom-navigation>
-    </transition>
-    <v-container>
+    <v-bottom-navigation style="position:sticky;top:0;bottom:unset;">
+      <v-btn v-for="route in routes"
+             :key="route.path"
+             :to="route.path">
+        <span>{{ route.name }}</span>
+        <v-icon>{{ route.meta.icon }}</v-icon>
+      </v-btn>
+    </v-bottom-navigation>
+    <v-container class="pt-5">
       <HomeIntro/>
     </v-container>
   </v-container>
@@ -29,7 +27,6 @@ import {RouteRecordPublic} from "vue-router";
 export default Vue.extend({
   name: "Home",
   data: () => ({
-    has_scrolled: false,
     animation_done: false
   }),
   components: {
@@ -41,7 +38,6 @@ export default Vue.extend({
     }
   },
   mounted() {
-    document.addEventListener('scroll', () => this.has_scrolled = true);
     const self = this;
     let timeline = anime.timeline({
       autoplay: true
@@ -51,11 +47,7 @@ export default Vue.extend({
       easing: 'easeInOutSine',
       targets: '#background-1-img path',
       strokeDashoffset: [anime.setDashoffset, 0],
-      delay(el, i) {
-        return i * 5
-      },
-      direction: 'alternate',
-      loop: true,
+      delay: (el, i) => i * 5
     });
     timeline.add({
       duration: 1500,
@@ -63,9 +55,7 @@ export default Vue.extend({
       targets: '#background-1-img path',
       'fill-opacity': [0, 1],
       'stroke-opacity': [1, 0],
-      delay(el, i) {
-        return i * 5
-      },
+      delay: (el, i) => i * 2,
       complete() {
         self.animation_done = true;
       }

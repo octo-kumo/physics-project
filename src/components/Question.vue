@@ -1,10 +1,9 @@
 <template>
   <v-card color="rgb(0, 0, 0, 0)" tile elevation="0">
-    <v-card-title>{{ value.question }}</v-card-title>
+    <v-card-title v-html="parse(value.question)"></v-card-title>
     <v-card-text v-if="value.answer!==-1">
       <v-alert
-          :type="value.answer===value.correct?'success':'error'">
-        {{ value.reason }}
+          :type="value.answer===value.correct?'success':'error'" v-html="parse(value.reason)">
       </v-alert>
     </v-card-text>
     <v-card-actions>
@@ -16,7 +15,7 @@
                 class="choice py-10 fill-height" tile elevation="0"
                 :color="value.answer===-1?(i===value.buffer?(['var(--color-1)', 'var(--color-2)', 'var(--color-3)', 'var(--color-4)'])[i%4]:'dark'):
                 (i===value.correct?'var(--color-2)':i===value.answer?'var(--color-4)':'dark')">
-              <v-card-text style="font-size: 1.2em" class="text-center">{{ c }}</v-card-text>
+              <v-card-text style="font-size: 1.2em" class="text-center" v-html="parse(c)"></v-card-text>
             </v-card>
           </v-col>
         </v-row>
@@ -30,7 +29,7 @@ import Vue from 'vue';
 
 export default Vue.extend({
   name: "Question",
-  props: ['value']
+  props: ['value', 'parse']
 });
 </script>
 

@@ -251,14 +251,14 @@ export default Vue.extend({
     questions: [
       {
         title: "Superconductivity",
-        question: "What does superconductivity mean?",
+        question: "What does **superconductivity** mean?",
         choices: ['It is super good at conducting', 'It is super bad at conducting', 'It conducts superbly', 'Conductivity that surpasses the norm and enters 𝕴𝖓𝖋𝖎𝖓𝖎𝖙𝖞'],
-        reason: 'Superconductors in theory, has zero resistance, and infinite conductivity.',
+        reason: 'Superconductors in theory, has **zero** resistance, and infinite conductivity.',
         correct: 3, answer: -1, buffer: -1
       },
       {
         title: "Electron",
-        question: "Which of the 2 families of particles are electrons in? (grouped by spin)",
+        question: "Which of the 2 families of particles are electrons in? (grouped by spin $s=\\frac n2$)",
         choices: ['Bosons', 'Fermions', 'Photons', 'Electrons'],
         reason: 'Integer spin particles are Bosons, and half integer spin particles are Fermions. Electron is half spin.',
         correct: 1, answer: -1, buffer: -1

@@ -29,7 +29,7 @@
           :key="i"
           :step="i+1"
           v-for="(q,i) in value">
-        <Question v-model="value[i]"/>
+        <Question v-model="value[i]" :parse="parse"/>
         <div class="pa-2">
           <v-btn color="primary" @click="submit(i)">{{ value[i].answer === -1 ? 'Submit' : 'Continue' }}</v-btn>
           <v-btn text>Cancel</v-btn>
@@ -51,7 +51,13 @@
 <script>
 import Vue from "vue";
 import Question from "@/components/Question";
+import MarkdownIt from "markdown-it";
+import latex from "@traptitech/markdown-it-katex";
 
+const md = new MarkdownIt({
+  html: true
+});
+md.use(latex);
 export default Vue.extend({
   name: "Quiz",
   props: ['value'],
@@ -63,6 +69,9 @@ export default Vue.extend({
     submit(i) {
       if (this.value[i].answer !== -1) this.current = Math.min(this.value.length + 1, i + 2)
       else this.value[i].answer = this.value[i].buffer;
+    },
+    parse(s) {
+      return md.render(s);
     }
   }
 });

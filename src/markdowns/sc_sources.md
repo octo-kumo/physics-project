@@ -21,3 +21,5 @@ https://en.wikipedia.org/wiki/Fermion
 https://en.wikipedia.org/wiki/Boson
 
 https://en.wikipedia.org/wiki/Meissner_effect
+
+https://en.wikipedia.org/wiki/Superconducting_magnet
