@@ -1,4 +1,4 @@
-<span></span>
+<!---->
 
 ### Quantum Algorithm
 Recall that when we observe the qubits that are in a superposition state, it will immediately collapse into one of the possible states based on probability. Hence, we can only read a single state output from our quantum system. So then, how are we supposed to read the results form the collapsed state? 

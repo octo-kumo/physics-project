@@ -1,4 +1,4 @@
-<span />
+<!---->
 
 # The Future of Quantum Computing
 While quantum computers may sound like a promising technology that will bring about significant changes to areas such as cybersecurity, quantum research and AI, it is still a relatively nascent field that is yet to develop into what we would expect. One of the current best quantum computer, Sycamore by Google, can only handle 53 qubits, which is far less that what is required for quantum computers to tackle exponential problems. 

@@ -1,4 +1,4 @@
-<span />
+<!---->
 
 # How Does it Work?
 ### The Qubit

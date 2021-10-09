@@ -8,6 +8,7 @@
     </g>
     <g v-for="j in 12" :key="j">
       <g v-for="i in 12" :key="j*i"
+         :opacity="calculateOpacity(i*40-10,j*40-10)"
          :transform="calculate(i*40-10,j*40-10)">
         <circle class="protons" r="12" fill="#f77"></circle>
         <text font-size="32" fill="#000" dominant-baseline="central" text-anchor="middle">+</text>
@@ -48,6 +49,15 @@ export default Vue.extend({
         Y += dy * s;
       }
       return `translate(${X},${Y})`;
+    },
+    calculateOpacity(x: number, y: number) {
+      let s = 0;
+      for (let i = 0; i < this.n; i++) {
+        let dx = this.pos * 500 * (2 - 1 / this.n) - i * 500 / this.n - x, dy = 250 - y;
+        s += (dx * dx + dy * dy) / 100000;
+      }
+      s /= this.n;
+      return 1 - Math.atan(s) * 2 / Math.PI;
     },
   }
 });

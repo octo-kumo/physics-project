@@ -1,3 +1,5 @@
+<!---->
+
 Quantum Superposition is a fundamental principle in quantum mechanics where it states that any two or more quantum states can be superposed and the result will be another valid quantum state. Alternatively, it states that every quantum state can be represented as a sum of two or more other distinct states.
 In physical terms, let's take an electron. When we measure the spin of the electron, it can either spin up (clockwise) or spin down (anticlockwise). According to quantum mechanics, the electrons have a supposition when not measured, the electron is a superposition of spin up and down. This means that it has a complex combination of both. 
 In mathematical terms state of this physical system can be represented by this:

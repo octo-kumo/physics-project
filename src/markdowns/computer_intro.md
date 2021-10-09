@@ -1,5 +1,4 @@
-</br>
-
+<!---->
 # Introduction
 A quantum computer solves computational problems by exploiting the properties of quantum mechanics. The main goal of quantum computers is to demonstrate quantum supremacy where quantum computers are able to perform tasks that classical computers would need to take millions of years to compute in under a few minutes.
 

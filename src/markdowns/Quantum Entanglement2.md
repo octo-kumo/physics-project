@@ -1,3 +1,5 @@
+<!---->
+
 Up until now, nobody knows quite how or why entanglement works. It also gives the idea that tiny particles are linked to each other even if they're separated by long distances. It is mysterious as it can influence other particles faster than the speed of light. This even baffled Einstein, who famously described it as “spooky action at a distance.” 
 
 But it’s key to the power of quantum computers. In a conventional computer, doubling the number of bits doubles its processing power. But thanks to entanglement, adding extra qubits to a quantum machine produces an exponential increase in its number-crunching ability. There is a possibility where using specially designed quantum algorithms, we can speed up calculations. Quantum entanglement has been demonstrated experimentally with photons, neutrinos, electrons, molecules, and even small diamonds. However quantum entanglement is broken when the entangled particles decohere through interaction with the environment; for example when a measurement is made.

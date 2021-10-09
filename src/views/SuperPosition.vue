@@ -50,7 +50,7 @@
       <v-card
           style="transition: box-shadow 0.5s;"
           rounded
-          class="mb-10"
+          class="mb-10">
         <v-row>
           <v-col cols="2" sm="10" md="10" lg="4" class="pa-0">
             <v-img
@@ -65,7 +65,7 @@
           <v-col cols="12" sm="6" md="8" lg="8">
             <v-card-title>Quantum Superposition</v-card-title>
             <v-card-text>
-              <QuantSuper />
+              <QuantSuper/>
             </v-card-text>
           </v-col>
         </v-row>
@@ -73,12 +73,12 @@
       <v-card
           style="transition: box-shadow 0.5s;"
           rounded
-          class="mb-10"
+          class="mb-10">
         <v-row align:center>
           <v-col cols="12" sm="6" md="7" lg="8">
             <v-card-title>Schrödinger's cat</v-card-title>
             <v-card-text>
-              <SchrCat />
+              <SchrCat/>
             </v-card-text>
           </v-col>
           <v-col cols="12" sm="2" md="10" lg="4" class="pa-0">
@@ -94,29 +94,29 @@
         </v-row>
       </v-card>
       <v-card
-        style="transition: box-shadow 0.5s;"
-        rounded
-        class="mb-10"
+          style="transition: box-shadow 0.5s;"
+          rounded
+          class="mb-10">
         <v-card-title>Quantum entanglement</v-card-title>
         <v-col>
           <v-card-text>
-            <QuantEntag1 />
+            <QuantEntag1/>
           </v-card-text>
-          <v-layout column align-center >
-                <v-img
-                  width = "800"
-                  src="@/assets/entangle_state.png"
-                ></v-img>
+          <v-layout column align-center>
+            <v-img
+                width="800"
+                src="@/assets/entangle_state.png"
+            ></v-img>
           </v-layout>
           <v-row>
             <v-card-text>
-              <QuantEntag2 />
+              <QuantEntag2/>
             </v-card-text>
             <v-layout column align-center>
               <v-card height="350px" width="900px" style="overflow-y:auto;" align-center>
                 <v-col>
                   <v-img
-                    src="https://images.deepai.org/converted-papers/1810.08421/Fig-09.png"
+                      src="https://images.deepai.org/converted-papers/1810.08421/Fig-09.png"
                   ></v-img>
                 </v-col>
               </v-card>
@@ -152,7 +152,6 @@
 
 <script lang="ts">
 import Vue from "vue";
-import SuperPos from "../markdowns/superposition.md";
 import WaveComposition from '../animations/wave_composite.vue';
 import QuantEntag1 from "../markdowns/Quantum Entanglement1.md";
 import QuantEntag2 from "../markdowns/Quantum Entanglement2.md";
@@ -161,8 +160,6 @@ import QuantSuper from "../markdowns/Quantum Superposition.md";
 import SchrCat from "../markdowns/Schrödinger's cat.md";
 import SuperPrin from "../markdowns/Superposition Principle.md";
 import Quiz from '../components/Quiz.vue';
-import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
-import {controller} from '../App.vue'
 import About from "../markdowns/phys_about.md";
 import Sources from "../markdowns/phys_sources.md";
 
@@ -177,21 +174,21 @@ export default Vue.extend({
       {
         title: "Superposition",
         question: "Consider an electron such that it superposition of both up and down. What is the spin of the electron when measured?",
-        choices: ['spin up','spin down','You cannot determine','I do not know'],
+        choices: ['spin up', 'spin down', 'You cannot determine', 'I do not know'],
         reason: 'Since the spin electron is in a superposition state, there is a certain probability to measure spin up and spin down so you cannot determine the spin of it',
         correct: 2, answer: -1, buffer: -1
       },
       {
         title: "Entanglement",
         question: "Lets say we generate a entangled quantum system of two electrons has total zero spin. If we measured the first electron to be spin up then what will observe when the second electron is measured:",
-        choices: ['spin up','spin down','both spin up and down','cannot be found'],
+        choices: ['spin up', 'spin down', 'both spin up and down', 'cannot be found'],
         reason: 'Since the two electrons are entangled and the first qubit is spin up then by quantum entanglement, the second qubit must be spin down',
         correct: 1, answer: -1, buffer: -1
       },
       {
         title: "Einstein",
         question: "Why did einstein call quantum entanglement spooky action of distance?",
-        choices: ['It becomes mysterious at large distances','Two quantum entangled electrons can interact faster than the speed of light','It will disappear when measured from a distance','I do not know'],
+        choices: ['It becomes mysterious at large distances', 'Two quantum entangled electrons can interact faster than the speed of light', 'It will disappear when measured from a distance', 'I do not know'],
         reason: "Quantum entanglement gives the idea that tiny particles are linked to each other  even if they're separated by long distances. This cannot happen as it faster than the speed of light which is why einstein called it spooky action at a distance",
         correct: 1, answer: -1, buffer: -1
       },
@@ -222,9 +219,11 @@ export default Vue.extend({
   padding: 1em 2em;
   backdrop-filter: blur(10px) brightness(60%);
 }
+
 img {
   max-width: 100%;
 }
+
 blockquote {
   backdrop-filter: invert(10%);
   border-left: 10px solid #aaaa;
@@ -241,13 +240,15 @@ blockquote:before {
   margin-right: 0.25em;
   vertical-align: -0.4em;
 }
+
 .scrolly {
   margin: 0px;
   background-color: teal;
-   overflow-y: scroll
+  overflow-y: scroll
 }
+
 .scrollx {
-   overflow-x: scroll
+  overflow-x: scroll
 }
 
 blockquote p {

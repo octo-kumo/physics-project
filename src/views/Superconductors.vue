@@ -9,7 +9,8 @@
       </v-parallax>
     </v-flex>
     <v-container>
-      <kinesis-container event="move" id="background-info">
+      <kinesis-container event="move" id="background-info"
+                         v-intersect="lookedAtPhoto">
         <kinesis-element type="depth" :strength="5">
           <v-hover v-slot="{ hover }">
             <v-card
@@ -23,7 +24,7 @@
                     <kinesis-element type="depth" :strength="20" axis="x">
                       <v-img
                           max-height="100%"
-                          src="https://upload.wikimedia.org/wikipedia/commons/9/9c/Kamerlingh_Onnes_signed.jpg"
+                          :src="!hasSeenQuiz||noNeedRick?'https://upload.wikimedia.org/wikipedia/commons/9/9c/Kamerlingh_Onnes_signed.jpg':'https://c.tenor.com/rtnshG9YFykAAAAM/rick-astley-rick-roll.gif'"
                       ></v-img>
                     </kinesis-element>
                   </kinesis-container>
@@ -39,8 +40,16 @@
           </v-hover>
         </kinesis-element>
       </kinesis-container>
-      <scintro/>
-      <MetallicBonding/>
+      <section class="my-5 pa-5">
+        <v-row>
+          <v-col cols="12" sm="4">
+            <MetallicBonding/>
+          </v-col>
+          <v-col cols="12" sm="8">
+            <scintro/>
+          </v-col>
+        </v-row>
+      </section>
       <v-divider class="my-8"></v-divider>
       <section>
         <v-hover v-slot="{ hover }" id="lightning">
@@ -48,7 +57,7 @@
                   class="pa-4"
                   :elevation="hover?10:0">
             <v-row>
-              <v-col cols="12" sm="6" md="4" class="pa-0">
+              <v-col cols="12" sm="6" md="4">
                 <Lightning :pos="lightning_pos"/>
               </v-col>
               <v-col cols="12" sm="6" md="8">
@@ -94,7 +103,7 @@
                   </div>
                 </v-card-text>
               </v-col>
-              <v-col cols="12" md="6" class="pa-0">
+              <v-col cols="12" md="6">
                 <TempGraph :pos="temp_pos"/>
               </v-col>
             </v-row>
@@ -204,7 +213,7 @@
         </v-row>
       </section>
       <v-divider class="my-5"/>
-      <h1>Quiz</h1>
+      <h1 v-intersect="entries=>this.hasSeenQuiz=this.hasSeenQuiz||entries[0].isIntersecting">Quiz</h1>
       <Quiz v-model="questions"/>
       <v-expansion-panels>
         <v-expansion-panel>
@@ -258,6 +267,9 @@ import anime from 'animejs/lib/anime.es.js';
 export default Vue.extend({
   name: 'Superconductor',
   data: () => ({
+    hasSeenQuiz: false,
+    hasMusicPlayed: false,
+    noNeedRick: localStorage.getItem('hasBeenRickRolled') === 'true',
     lightning_pos: 0,
     temp_pos: 0,
     attraction_pos: 0,
@@ -322,6 +334,15 @@ export default Vue.extend({
         reason: 'Superconducting wires can form electromagnets that does not need a power source. Some has tried and the magnet used is still levitating after a decade.',
         correct: 2, answer: -1, buffer: -1
       }, {
+        title: "Who?",
+        question: "Who discovered superconductivity?<br>Hint: scroll all the way up",
+        choices: ['Heike Kamerlingh Onnes',
+          'Floris Verster',
+          'Albert Einstein',
+          'Isaac Newton'],
+        reason: 'Imagine cheating',
+        correct: 0, answer: -1, buffer: -1
+      }, {
         title: "Feedback",
         question: "Is the website well made?",
         choices: ['Ye-yes', 'No', 'IT IS THE BEST WEBSITE EVER', 'Well according to the World Organization of Good Website Designs, this website only scores 1/10'],
@@ -346,12 +367,15 @@ export default Vue.extend({
     Sources
   },
   mounted() {
+    let delays = [0, 0, 500, 500, 500]
     this.flux_animation = anime({
-      targets: '#flex-svg path',
+      targets: '#flex-svg path, #flex-svg ellipse',
       strokeDashoffset: [anime.setDashoffset, 0],
+      'fill-opacity': [0, 1],
+      'stroke-width': [0, 5],
       easing: 'easeInOutSine',
       duration: 1000,
-      delay: (el: Element, i: number) => (i % 54) * 100,
+      delay: (el: Element, i: number) => delays[i],
       direction: 'alternate',
       autoplay: false
     });
@@ -396,6 +420,15 @@ export default Vue.extend({
           offset: -94,
           duration: 1000
         }).setPin('#flex-animation').on("progress", async (event: SceneProgressEvent<'progress'>) => this.flux_animation.seek(event.progress * this.flux_animation.duration)))
+  },
+  methods: {
+    lookedAtPhoto(entries: IntersectionObserverEntry[]) {
+      if (entries[0].isIntersecting && this.hasSeenQuiz && !this.hasMusicPlayed && !this.noNeedRick) {
+        new Audio('https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3').play();
+        this.hasMusicPlayed = true;
+        localStorage.setItem("hasBeenRickRolled", 'true');
+      }
+    }
   }
 });
 </script>
@@ -438,15 +471,4 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
-
-/*.float {*/
-/*  position: sticky !important;*/
-/*  inset: 0 !important;*/
-/*  top: 94px !important;*/
-/*}*/
-
-/*.scrollmagic-pin-spacer {*/
-/*  padding-top: 0 !important;*/
-/*  padding-bottom: 1000px !important;*/
-/*}*/
 </style>

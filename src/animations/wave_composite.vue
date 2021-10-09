@@ -1,11 +1,8 @@
 <template>
   <svg :viewBox="`0 0 1000 ${height}`">
-    <path class="wave-slice major"
-          :d="`M `+value1.map((v,i)=>`${i*1000/precision} ${(v+value2[i])*height/4+height/2}${i===precision-1?'':' L'}`).join(' ')"></path>
-    <path class="wave-slice"
-          :d="`M `+value1.map((v,i)=>`${i*1000/precision} ${v*height/4+height/2}${i===precision-1?'':' L'}`).join(' ')"></path>
-    <path class="wave-slice"
-          :d="`M `+value2.map((v,i)=>`${i*1000/precision} ${v*height/4+height/2}${i===precision-1?'':' L'}`).join(' ')"></path>
+    <path ref="comp" class="wave-slice major" :d="d1"></path>
+    <path ref="g1" class="wave-slice" :d="d2"></path>
+    <path ref="g2" class="wave-slice" :d="d3"></path>
   </svg>
 </template>
 
@@ -24,9 +21,11 @@ export default Vue.extend({
     precision: 1000,
     array: [],
     height: 200,
-    offset: 0
+    offset: 0,
+    d1: "", d2: "", d3: ""
   }),
   mounted() {
+    const self = this;
     anime({
       targets: this,
       offset: this.precision,
@@ -34,19 +33,31 @@ export default Vue.extend({
       easing: 'easeInOutSine',
       autoplay: true,
       direction: 'alternate',
-      loop: true
+      loop: true,
+      update() {
+        let a = 'M', b = 'M', c = 'M';
+        for (let i = 0; i < self.precision; i++) {
+          a += `${i * 1000 / self.precision} ${(self.v(i)) * self.height / 4 + self.height / 2}${i === self.precision - 1 ? '' : ' L'}`;
+          b += `${i * 1000 / self.precision} ${(self.v1(i)) * self.height / 4 + self.height / 2}${i === self.precision - 1 ? '' : ' L'}`;
+          c += `${i * 1000 / self.precision} ${(self.v2(i)) * self.height / 4 + self.height / 2}${i === self.precision - 1 ? '' : ' L'}`;
+        }
+        self.d1 = a;
+        self.d2 = b;
+        self.d3 = c;
+      }
     });
     this.array = Array.from(Array(this.precision).keys())
         .map(i => i > this.precision / 5 ? 0 : sineWaveAt(i, this.precision / 10))
   },
-  computed: {
-    value1() {
-      return this.array
-          .map((v, i) => this.array[Math.max(Math.min(Math.floor(i - this.offset + this.precision / 5), this.precision - 1), 0)])
+  methods: {
+    v(i) {
+      return this.v1(i) + this.v2(i);
     },
-    value2() {
-      return this.array
-          .map((v, i) => this.array[Math.max(Math.min(Math.floor(-this.precision + i + this.offset), this.precision - 1), 0)])
+    v1(i) {
+      return this.array[Math.max(Math.min(Math.floor(i - this.offset + this.precision / 5), this.precision - 1), 0)];
+    },
+    v2(i) {
+      return this.array[Math.max(Math.min(Math.floor(-this.precision + i + this.offset), this.precision - 1), 0)];
     }
   }
 });

@@ -1,6 +1,7 @@
 <template>
   <div>
     <kinesis-container
+        :duration="0"
         event="scroll">
       <svg
           xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -10,7 +11,6 @@
           xmlns="http://www.w3.org/2000/svg"
           version="1.1"
           viewBox="0,0,770,600"
-          width="50%"
           id="svg3797">
         <defs
             id="defs3"/>
@@ -860,6 +860,6 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name:"metal-lattice"
+  name: "metal-lattice"
 });
 </script>

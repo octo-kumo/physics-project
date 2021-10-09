@@ -47,7 +47,7 @@ export default Vue.extend({
     });
     timeline.add({
       duration: 2000,
-      easing: 'easeInOutSine',
+      easing: 'easeInSine',
       targets: '#background-1-img path',
       strokeDashoffset: [anime.setDashoffset, 0],
       delay: (el, i) => i * 5
