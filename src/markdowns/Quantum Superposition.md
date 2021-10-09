@@ -1,5 +1,3 @@
-<!---->
-
 Quantum Superposition is a fundamental principle in quantum mechanics where it states that any two or more quantum states can be superposed and the result will be another valid quantum state. Alternatively, it states that every quantum state can be represented as a sum of two or more other distinct states.
 In physical terms, let's take an electron. When we measure the spin of the electron, it can either spin up (clockwise) or spin down (anticlockwise). According to quantum mechanics, the electrons have a supposition when not measured, the electron is a superposition of spin up and down. This means that it has a complex combination of both. 
 In mathematical terms state of this physical system can be represented by this:
@@ -18,7 +16,7 @@ p_{up or down} &= p_{down}+p_{up}=1
 
 \end{align*}
 $$
-$p_{up}$ refers to the probability of the electron being spin up when measured and $p_{down}$ refers to the probability of the electron being spin up when measured. In this example we have consider 2 configurations, but there can be infinitely many. In this example, we have considered 2 configurations, but there can be infinitely many. In general, by the principal of superposition, the state of the quantum state for infinitely many configurations is:	
+$p_{up}$ refers to the probability of the electron being spin up when measured and $p_{down}$ refers to the probability of the electron being spin up when measured. In this example we have consider 2 configurations, but there can be infinitely many. In general, by the principal of superposition, the state of the quantum state for infinitely many configurations is:	
 $$
 |\psi\rangle = \sum_{x}\rho(x)|x\rangle
 $$
