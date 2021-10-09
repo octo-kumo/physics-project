@@ -189,6 +189,20 @@
           </v-col>
         </v-row>
       </section>
+      <section class="my-5 pa-5">
+        <v-row id="flex-animation">
+          <v-col cols="12" sm="4">
+            <svg viewBox="0 0 512 512" id="ripple-waves">
+              <circle v-for="i in 12" :key="i" :r="i*16"
+                      fill="transparent" stroke="#a00" stroke-width="2px" stroke-opacity="0.1" cx="256"
+                      cy="256"></circle>
+            </svg>
+          </v-col>
+          <v-col cols="12" sm="8">
+            <MagnetExp3/>
+          </v-col>
+        </v-row>
+      </section>
       <v-divider class="my-5"/>
       <h1>Quiz</h1>
       <Quiz v-model="questions"/>
@@ -232,6 +246,7 @@ import scexp4 from '../markdowns/sc_exp_4.md';
 import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
 import MagnetExp1 from '../markdowns/sc_magnet_1.md';
 import MagnetExp2 from '../markdowns/sc_magnet_2.md';
+import MagnetExp3 from '../markdowns/sc_magnet_3.md';
 import About from '../markdowns/sc_about.md';
 import Sources from '../markdowns/sc_sources.md';
 
@@ -302,7 +317,7 @@ export default Vue.extend({
         question: "Why are superconductors important?",
         choices: ['They can conduct a lot of electricity',
           'They can transport large amounts of electrons in a very short period of time',
-          'They can create magnetic fields that lasts for eternity',
+          'They can create magnetic fields that lasts for eternity without power source',
           'They have the ability of collapse into a single point, a singularity, and hence the ultimate weapon of humanity.'],
         reason: 'Superconducting wires can form electromagnets that does not need a power source. Some has tried and the magnet used is still levitating after a decade.',
         correct: 2, answer: -1, buffer: -1
@@ -326,7 +341,7 @@ export default Vue.extend({
     Lightning,
     MetallicBonding,
     Attraction,
-    MagnetExp1, MagnetExp2,
+    MagnetExp1, MagnetExp2, MagnetExp3,
     About,
     Sources
   },
@@ -339,6 +354,16 @@ export default Vue.extend({
       delay: (el: Element, i: number) => (i % 54) * 100,
       direction: 'alternate',
       autoplay: false
+    });
+    anime({
+      targets: '#ripple-waves circle',
+      r: (el: Element, i: number) => (i + 1) * 20,
+      'stroke-opacity': [0.1, 1, 0.1],
+      easing: 'easeInOutSine',
+      duration: 1000,
+      delay: (el: Element, i: number) => i * 50,
+      autoplay: true,
+      loop: true
     });
     controller
         .addScene(new ScrollMagic.Scene({

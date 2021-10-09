@@ -1,4 +1,4 @@
-<efe></efe>
+<!---->
 # **Superposition** **Principle**
 
 Before we understand what is a quantum superposition, we need to first understand what is superposition. The superposition principle, also known as superposition property, states that for all linear systems the net response caused by two or more stimuli is the sum of the responses that would have been caused by each stimulus individually. For example, if input a gives an output of x and input b gives an output of y, then input(a+b) gives an output of x+y. Superposition principle can be applied to any linear system. As such this principal has many applications in physics and engineering. This principal can be defined by two properties, additivity and homogeneity.  In mathematical terms,  let G(x) a linear function, then by superposition principle:

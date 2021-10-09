@@ -8,109 +8,115 @@
       </v-parallax>
     </v-flex>
     <v-container>
-      <v-card
-        style="transition: box-shadow 0.5s"
-        rounded
-        class="mb-10"
-        :elevation="hover ? 10 : 0"
-      >
+      <v-hover v-slot="{ hover }">
+        <v-card
+            style="transition: box-shadow 0.5s"
+            rounded
+            class="mb-10"
+            :elevation="hover ? 10 : 0"
+        >
           <v-card-text>
-            <SuperPrin />
+            <SuperPrin/>
           </v-card-text>
           <v-layout>
-            <v-img
-              src="@/assets/superpos_waves.gif"
-            ></v-img>
+            <WaveComposition/>
           </v-layout>
-      </v-card>
-      <v-card
-        style="transition: box-shadow 0.5s"
-        rounded
-        class="mb-10"
-        :elevation="hover ? 10 : 0"
-      >
-        <v-row>
-          <v-col cols="12" sm="6" md="8" lg="9">
-            <v-card-title>Quantum State</v-card-title>
-            <v-card-text>
-              <QuantState />
-            </v-card-text>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="3" class="pa-0">
-            <kinesis-container event="move">
-              <kinesis-element type="depth" :strength="20" axis="x">
-                <v-img max-height="100%" src="@/assets/state_img.png"></v-img>
-              </kinesis-element>
-            </kinesis-container>
-          </v-col>
-        </v-row>
-      </v-card>
-      <v-card
-        style="transition: box-shadow 0.5s"
-        rounded
-        class="mb-10"
-        :elevation="hover ? 10 : 0"
-      >
-        <v-row>
-          <v-col cols="12" sm="6" md="4" lg="4" class="pa-0">
-            <kinesis-container event="move">
-              <kinesis-element type="depth" :strength="30" axis="x">
-                <v-img
-                  max-height="100%"
-                  src="https://lh5.googleusercontent.com/d3hfjkLFmA5-Kx07UoC3QZ0w3hvbb5JfvTOd6hLo3FsE5i4tW7lMG_lIsYq1-FIi86QK9oKO56rEfI5fuMTUQtzLy_AJXCOGIN2Jta2aFFJWmKSmFprCK87ngJr8BWTUDJdvL5-4=s0"
-                ></v-img>
-              </kinesis-element>
-            </kinesis-container>
-          </v-col>
-          <v-col cols="12" sm="6" md="7" lg="7">
-            <v-card-title>Quantum Superposition</v-card-title>
-            <v-card-text>
-              <QuantSuper />
-            </v-card-text>
-          </v-col>
-        </v-row>
-      </v-card>
-      <QuantEntag />
-      <v-card
-        style="transition: box-shadow 0.5s"
-        rounded
-        class="mb-10"
-        :elevation="hover ? 10 : 0"
-      >
-        <v-row>
-          <v-col cols="12" sm="6" md="7" lg="7">
-            <v-card-title>Schrödinger's cat</v-card-title>
-            <v-card-text>
-              <SchrCat />
-            </v-card-text>
-          </v-col>
-          <v-col cols="12" sm="6" md="4" lg="4" class="pa-0">
-            <kinesis-container event="move">
-              <kinesis-element type="depth" :strength="30" axis="x">
-                <v-img
-                  max-height="100%"
-                  src="https://upload.wikimedia.org/wikipedia/commons/9/91/Schrodingers_cat.svg"
-                ></v-img>
-              </kinesis-element>
-            </kinesis-container>
-          </v-col>
-        </v-row>
-      </v-card>
+        </v-card>
+      </v-hover>
+      <v-hover v-slot="{ hover }">
+        <v-card
+            style="transition: box-shadow 0.5s"
+            rounded
+            class="mb-10"
+            :elevation="hover ? 10 : 0"
+        >
+          <v-row>
+            <v-col cols="12" sm="6" md="8" lg="9">
+              <v-card-title>Quantum State</v-card-title>
+              <v-card-text>
+                <QuantState/>
+              </v-card-text>
+            </v-col>
+            <v-col cols="12" sm="6" md="4" lg="3" class="pa-0">
+              <kinesis-container event="move">
+                <kinesis-element type="depth" :strength="20" axis="x">
+                  <v-img max-height="100%" src="@/assets/state_img.png"></v-img>
+                </kinesis-element>
+              </kinesis-container>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-hover>
+      <v-hover v-slot="{ hover }">
+        <v-card
+            style="transition: box-shadow 0.5s"
+            rounded
+            class="mb-10"
+            :elevation="hover ? 10 : 0"
+        >
+          <v-row>
+            <v-col cols="12" sm="6" md="4" lg="4" class="pa-0">
+              <kinesis-container event="move">
+                <kinesis-element type="depth" :strength="30" axis="x">
+                  <v-img
+                      max-height="100%"
+                      src="https://lh5.googleusercontent.com/d3hfjkLFmA5-Kx07UoC3QZ0w3hvbb5JfvTOd6hLo3FsE5i4tW7lMG_lIsYq1-FIi86QK9oKO56rEfI5fuMTUQtzLy_AJXCOGIN2Jta2aFFJWmKSmFprCK87ngJr8BWTUDJdvL5-4=s0"
+                  ></v-img>
+                </kinesis-element>
+              </kinesis-container>
+            </v-col>
+            <v-col cols="12" sm="6" md="7" lg="7">
+              <v-card-title>Quantum Superposition</v-card-title>
+              <v-card-text>
+                <QuantSuper/>
+              </v-card-text>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-hover>
+      <QuantEntag/>
+      <v-hover v-slot="{ hover }">
+        <v-card
+            style="transition: box-shadow 0.5s"
+            rounded
+            class="mb-10"
+            :elevation="hover ? 10 : 0"
+        >
+          <v-row>
+            <v-col cols="12" sm="6" md="7" lg="7">
+              <v-card-title>Schrödinger's cat</v-card-title>
+              <v-card-text>
+                <SchrCat/>
+              </v-card-text>
+            </v-col>
+            <v-col cols="12" sm="6" md="4" lg="4" class="pa-0">
+              <kinesis-container event="move">
+                <kinesis-element type="depth" :strength="30" axis="x">
+                  <v-img
+                      max-height="100%"
+                      src="https://upload.wikimedia.org/wikipedia/commons/9/91/Schrodingers_cat.svg"
+                  ></v-img>
+                </kinesis-element>
+              </kinesis-container>
+            </v-col>
+          </v-row>
+        </v-card>
+      </v-hover>
     </v-container>
 
     <h1>Quiz</h1>
-    <Quiz v-model="questions" />
+    <Quiz v-model="questions"/>
     <v-expansion-panels>
       <v-expansion-panel>
-        <v-expansion-panel-header> About </v-expansion-panel-header>
+        <v-expansion-panel-header> About</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <About />
+          <About/>
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
-        <v-expansion-panel-header> Sources </v-expansion-panel-header>
+        <v-expansion-panel-header> Sources</v-expansion-panel-header>
         <v-expansion-panel-content>
-          <Sources />
+          <Sources/>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -119,6 +125,7 @@
 
 <script lang="ts">
 import Vue from "vue";
+import WaveComposition from '../animations/wave_composite.vue';
 import SuperPos from "../markdowns/superposition.md";
 import QuantEntag from "../markdowns/Quantum Entanglement.md";
 import QuantState from "../markdowns/Quantum State.md";
@@ -129,7 +136,7 @@ import Quiz from "../components/Quiz.vue";
 import anime from 'animejs/lib/anime.es.js';
 
 export default Vue.extend({
-  name: "Quantum Physics",
+  name: "QuantumPhysics",
 
   data: () => ({
     lightning_pos: 0,
@@ -148,7 +155,7 @@ export default Vue.extend({
           "Conductivity that surpasses the norm and enters 𝕴𝖓𝖋𝖎𝖓𝖎𝖙𝖞",
         ],
         reason:
-          "Superconductors in theory, has zero resistance, and infinite conductivity.",
+            "Superconductors in theory, has zero resistance, and infinite conductivity.",
         correct: 3,
         answer: -1,
         buffer: -1,
@@ -156,10 +163,10 @@ export default Vue.extend({
       {
         title: "Electron",
         question:
-          "Which of the 2 families of particles are electrons in? (grouped by spin)",
+            "Which of the 2 families of particles are electrons in? (grouped by spin)",
         choices: ["Bosons", "Fermions", "Photons", "Electrons"],
         reason:
-          "Integer spin particles are Bosons, and half integer spin particles are Fermions. Electron is half spin.",
+            "Integer spin particles are Bosons, and half integer spin particles are Fermions. Electron is half spin.",
         correct: 1,
         answer: -1,
         buffer: -1,
@@ -174,7 +181,7 @@ export default Vue.extend({
           "Family Fridge",
         ],
         reason:
-          "Superconductors require extremely low temperatures to operate, even the highest possible temperature is 138K (1-atm).",
+            "Superconductors require extremely low temperatures to operate, even the highest possible temperature is 138K (1-atm).",
         correct: 2,
         answer: -1,
         buffer: -1,
@@ -189,7 +196,7 @@ export default Vue.extend({
           "It increases conductivity since protons can now push electrons forward",
         ],
         reason:
-          "As temperature increase, lattice vibrates more and collision of atoms and electrons become more frequent, causing electrons to lose more energy, and hence a higher resistance.",
+            "As temperature increase, lattice vibrates more and collision of atoms and electrons become more frequent, causing electrons to lose more energy, and hence a higher resistance.",
         correct: 2,
         answer: -1,
         buffer: -1,
@@ -204,7 +211,7 @@ export default Vue.extend({
           "Electrons&Electrons",
         ],
         reason:
-          'Note that electron"s" can form cooper pairs, and cooper pairs are composite bosons that can, share quantum state.',
+            'Note that electron"s" can form cooper pairs, and cooper pairs are composite bosons that can, share quantum state.',
         correct: 3,
         answer: -1,
         buffer: -1,
@@ -212,7 +219,7 @@ export default Vue.extend({
       {
         title: "Why",
         question:
-          "Why can electrons flow through a superconductor without losing energy to collisions?",
+            "Why can electrons flow through a superconductor without losing energy to collisions?",
         choices: [
           "Electrons have very little to none kinetic energy at such low temperatures, this cause the Higgs Boson effect that collapses electron's wave-function into a single point, enabling it to flow through space without colliding with anything.",
           "After cooled to near absolute zero, electrons have now moved into the 4th dimensional and is able to phase through matter",
@@ -224,7 +231,7 @@ export default Vue.extend({
           "We live in a simulation and cooling materials down to such low temperatures activates a bug in the resistance calculation",
         ],
         reason:
-          "Electrons at such low temperatures form cooper pairs that are composite bosons, they can collapse into the same lowest energy ground state (BECs). Which is lower than fermi energy, enabling superconductivity.",
+            "Electrons at such low temperatures form cooper pairs that are composite bosons, they can collapse into the same lowest energy ground state (BECs). Which is lower than fermi energy, enabling superconductivity.",
         correct: 4,
         answer: -1,
         buffer: -1,
@@ -239,7 +246,7 @@ export default Vue.extend({
           "They have the ability of collapse into a single point, a singularity, and hence the ultimate weapon of humanity.",
         ],
         reason:
-          "Superconducting wires can form electromagnets that does not need a power source. Some has tried and the magnet used is still levitating after a decade.",
+            "Superconducting wires can form electromagnets that does not need a power source. Some has tried and the magnet used is still levitating after a decade.",
         correct: 2,
         answer: -1,
         buffer: -1,
@@ -262,11 +269,12 @@ export default Vue.extend({
   }),
 
   components: {
+    WaveComposition,
     SuperPrin,
     QuantState,
     QuantSuper,
     QuantEntag,
-    SchrCat,
+    SchrCat, Quiz
   },
 });
 </script>

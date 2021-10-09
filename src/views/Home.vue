@@ -1,7 +1,10 @@
 <template>
   <v-container fluid class="pa-0">
     <div id="background-1">
-      <SystemOne id="background-1-img"></SystemOne>
+      <transition name="fade">
+        <SystemOne id="background-1-img" v-if="!animation_done"></SystemOne>
+        <v-img id="background-2-img" src="@/assets/system_one.jpg" v-if="animation_done"></v-img>
+      </transition>
     </div>
     <v-bottom-navigation style="position:sticky;top:0;bottom:unset;">
       <v-btn v-for="route in routes"
@@ -72,7 +75,7 @@ export default Vue.extend({
   position: relative;
 }
 
-#background-1-img {
+#background-1-img, #background-2-img {
   position: absolute;
   left: 0;
   top: 0;
@@ -81,7 +84,7 @@ export default Vue.extend({
 }
 
 .fade-enter-active, .fade-leave-active {
-  transition: opacity .5s;
+  transition: opacity 1s ease-in-out;
 }
 
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
