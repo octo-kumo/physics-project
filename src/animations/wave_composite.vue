@@ -64,12 +64,15 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-
 .wave-slice {
   fill: none;
   stroke: white;
   stroke-width: 1px;
   stroke-dasharray: 4;
+}
+
+.v-application.theme--dark .wave-slice {
+  stroke: black;
 }
 
 .major {
