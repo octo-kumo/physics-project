@@ -24,7 +24,7 @@ const routes: Array<RouteConfig> = [
     },
     {
         path: '/cat',
-        name: 'Superposition',
+        name: 'Quantum Physics',
         component: () => import(/* webpackChunkName: "sp" */ '../views/SuperPosition.vue'),
         meta: {icon: 'mdi-atom'}
     },
