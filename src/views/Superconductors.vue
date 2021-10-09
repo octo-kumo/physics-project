@@ -122,7 +122,7 @@
           drop to zero at a certain temperature?</p>
       </section>
       <section class="my-5" id="attractionAnchor">
-        <v-hover v-slot="{ hover }" id="attraction">
+        <v-hover v-slot="{ hover }" id="attraction" v-intersect="()=>{if(this.hasSeenQuiz)this.hasSeenQuiz2=true}">
           <v-card style="transition: box-shadow 0.5s;"
                   class="pa-4"
                   :elevation="hover?10:0">
@@ -268,6 +268,7 @@ export default Vue.extend({
   name: 'Superconductor',
   data: () => ({
     hasSeenQuiz: false,
+    hasSeenQuiz2: false,
     hasMusicPlayed: false,
     noNeedRick: localStorage.getItem('hasBeenRickRolled') === 'true',
     lightning_pos: 0,
@@ -423,7 +424,7 @@ export default Vue.extend({
   },
   methods: {
     lookedAtPhoto(entries: IntersectionObserverEntry[]) {
-      if (entries[0].isIntersecting && this.hasSeenQuiz && !this.hasMusicPlayed && !this.noNeedRick) {
+      if (entries[0].isIntersecting && this.hasSeenQuiz && this.hasSeenQuiz2 && !this.hasMusicPlayed && !this.noNeedRick) {
         new Audio('https://www.soundboard.com/mediafiles/mz/Mzg1ODMxNTIzMzg1ODM3_JzthsfvUY24.MP3').play();
         this.hasMusicPlayed = true;
         localStorage.setItem("hasBeenRickRolled", 'true');
