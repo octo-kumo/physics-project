@@ -118,8 +118,8 @@ export default Vue.extend({
         sid: "h1710069",
         name: "Nithesh",
         description: "eating lemon",
-        src: "https://cdn.discordapp.com/attachments/886807281369497622/896725575580930068/unknown.png",
-        contributions: ['Quantum Physics', 'Introduction to Quantum Physics', 'Superposition', 'Quantum Entanglement', 'Math', 'Quiz']
+        src: "https://cdn.discordapp.com/attachments/886807281369497622/896727068824436736/Z.png",
+        contributions: ['Quantum Physics', 'Introduction to Quantum Physics', 'Superposition', 'Quantum Entanglement', 'Schrödinger\'s Cat', 'Math', 'Quiz']
       }
     ],
     pages: [{
