@@ -15,6 +15,7 @@
             class="mb-10"
             :elevation="hover ? 10 : 0"
         >
+          <v-card-title>Superposition Principle</v-card-title>
           <v-card-text>
             <SuperPrin/>
           </v-card-text>
