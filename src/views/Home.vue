@@ -18,6 +18,7 @@
       <HomeIntro/>
       <v-divider class="my-10"/>
       <Youtube video-id="RJyTtNKIo4Q"></Youtube>
+      <references/>
       <v-divider class="my-10"/>
       <h2 class="text-center">Pages</h2>
       <v-row class="pa-10">
@@ -96,6 +97,7 @@ import SystemOne from '../assets/system_one.svg'
 import anime from "animejs";
 import {RouteRecordPublic} from "vue-router";
 import Youtube from "@/components/Youtube.vue";
+import references from "../markdowns/video_ref.md";
 
 export default Vue.extend({
   name: "Home",
@@ -147,7 +149,7 @@ export default Vue.extend({
   }),
   components: {
     Youtube,
-    HomeIntro, SystemOne
+    HomeIntro, SystemOne, references
   },
   computed: {
     routes() {
