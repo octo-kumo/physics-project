@@ -147,18 +147,18 @@ export default Vue.extend({
     });
     timeline.add({
       duration: 2000,
-      easing: 'easeInOutSine',
+      easing: 'easeInCubic',
       targets: '#background-1-img path',
       strokeDashoffset: [anime.setDashoffset, 0],
       delay: (el, i) => Math.pow(i, 0.9) * 7
     });
     timeline.add({
-      duration: 1500,
+      duration: 2000,
       easing: 'easeOutQuad',
       targets: '#background-1-img path',
       'fill-opacity': [0, 1],
       'stroke-opacity': [1, 0],
-      delay: (el, i) => Math.pow(i, 0.9) * 4,
+      delay: (el, i) => Math.pow(i, 0.9) * 3,
       complete() {
         self.animation_done = true;
       }
