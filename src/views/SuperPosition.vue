@@ -172,11 +172,11 @@ export default Vue.extend({
     attraction2_pos: 0,
     questions: [
       {
-        title: "Superposition",
-        question: "Consider an electron such that it superposition of both up and down. What is the spin of the electron when measured?",
-        choices: ['spin up', 'spin down', 'You cannot determine', 'I do not know'],
-        reason: 'Since the spin electron is in a superposition state, there is a certain probability to measure spin up and spin down so you cannot determine the spin of it',
-        correct: 2, answer: -1, buffer: -1
+        title: "Probability",
+        question: "Consider the example that i have mentioned earlier where we have an electron and its quantum state has a coefficient C1 of being spin up and coefficient C2 of being spin down. If C1 = 3/5 & C2 = 4/5, what is the probability of measuring the electron spin up? ",
+        choices: ['3/5','9/25','4/25','16/25'],
+        reason: 'As i stated earlier, the probability of measuring the electron spin up is the |C1|^2 so (3/5)^2 gives you 9/25. So there is 9/25 probability of measuring the electron spin up.',
+        correct: 1, answer: -1, buffer: -1
       },
       {
         title: "Entanglement",
