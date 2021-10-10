@@ -30,8 +30,7 @@
                   :to="page.path"
                   block
                   color="primary"
-                  elevation="2"
-              >Learn more
+                  elevation="2">{{ page.hook }}
               </v-btn>
             </v-card-actions>
           </v-card>
@@ -106,30 +105,41 @@ export default Vue.extend({
         name: "Zhao Yun",
         description: "uwu",
         src: "https://files.catbox.moe/jjpjhl.jpg",
-        contributions: ['Superconductors', 'Website', 'Animation', 'Website Framework', 'Easter Eggs', 'Applications of Superconductors']
+        contributions: ['Superconductors', 'Website', 'Introduction to Superconductors', 'Animation', 'Easter Eggs', 'Applications of Superconductors', 'Framework', 'Hosting', 'Quiz']
       },
       {
         sid: "h1930006",
         name: "Hee Lai",
         description: "owo",
-        contributions: ['Quantum Computers']
+        src: "https://cdn.discordapp.com/attachments/886807281369497622/896720330192748544/KennyMcCormick.png",
+        contributions: ['Quantum Computers', 'History', 'Introduction to Quantum Computers', 'Video', 'Anatomy', 'Applications of Quantum Computers', 'Quiz']
       },
       {
         sid: "h1710069",
         name: "Nithesh",
         description: "-w-",
-        contributions: ['Quantum Physics']
+        src: "https://cdn.discordapp.com/attachments/886807281369497622/896724950839345172/boy-avatar-4-1129037.png",
+        contributions: ['Quantum Physics', 'Introduction to Quantum Physics', 'Superposition', 'Quantum Entanglement', 'Math', 'Quiz']
       }
     ],
     pages: [{
-      name: "a"
+      src: "https://1.bp.blogspot.com/-CmGPCx78J7U/XbC8L7QzW_I/AAAAAAAAE14/fWozhMAgTB0W95MP-rbirIF_Pw08Tb7GgCLcBGAsYHQ/s1600/Google_Quantum_Nature_cover_art_small.png",
+      path: "/math",
+      name: "Quantum Computers",
+      summary: "What is a quantum computer? How does it work? What can you do with a quantum computer?",
+      hook: "Find out more"
     }, {
       src: "https://images.theconversation.com/files/73507/original/image-20150302-15941-1fyapoc.jpg?ixlib=rb-1.1.0&rect=8%2C561%2C5591%2C3302&q=45&auto=format&w=512",
       path: "/super",
       name: "Superconductors",
-      summary: "The magical material of zero resistance and cool levitation, why is that so? And what does it have to do with quantum computing?"
+      summary: "The magical material of zero resistance and cool levitation, why is that so? And what does it have to do with quantum computing?",
+      hook: "Learn more"
     }, {
-      name: "c"
+      src: "https://cdn.discordapp.com/attachments/886807281369497622/896723176644550706/quantum-networkMB06-07HR-Scixel-2048x1152.png",
+      path: "/cat",
+      name: "Quantum Physics",
+      summary: "How mysterious is quantum superposition? What is quantum entanglement? Lets learn the physics of the unknown!",
+      hook: "Let's go"
     }]
   }),
   components: {
@@ -158,7 +168,7 @@ export default Vue.extend({
       targets: '#background-1-img path',
       'fill-opacity': [0, 1],
       'stroke-opacity': [1, 0],
-      delay: (el, i) => Math.pow(i, 0.9) * 3,
+      delay: (el, i) => i % 100 * 30,
       complete() {
         self.animation_done = true;
       }
