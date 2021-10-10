@@ -6,7 +6,7 @@
         <v-img id="background-2-img" src="@/assets/system_one.jpg" v-if="animation_done"></v-img>
       </transition>
     </div>
-    <v-bottom-navigation style="position:sticky;top:0;bottom:unset;">
+    <v-bottom-navigation style="position:sticky;top:0;bottom:unset;z-index:1000;">
       <v-btn v-for="route in routes"
              :key="route.path"
              :to="route.path">
