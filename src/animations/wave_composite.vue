@@ -27,8 +27,8 @@ export default Vue.extend({
   mounted() {
     const self = this;
     anime({
-      targets: this,
-      offset: this.precision,
+      targets: self,
+      offset: self.precision,
       duration: 10000,
       easing: 'easeInOutSine',
       autoplay: true,

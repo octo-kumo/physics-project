@@ -124,28 +124,28 @@
           </v-row>
         </v-col>
       </v-card>
+      <h1>Quiz</h1>
+      <Quiz v-model="questions"/>
+      <v-expansion-panels>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            About
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <About/>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+        <v-expansion-panel>
+          <v-expansion-panel-header>
+            Sources
+          </v-expansion-panel-header>
+          <v-expansion-panel-content>
+            <Sources/>
+          </v-expansion-panel-content>
+        </v-expansion-panel>
+      </v-expansion-panels>
     </v-container>
 
-    <h1>Quiz</h1>
-    <Quiz v-model="questions"/>
-    <v-expansion-panels>
-      <v-expansion-panel>
-        <v-expansion-panel-header>
-          About
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <About/>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header>
-          Sources
-        </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <Sources/>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-    </v-expansion-panels>
 
   </v-container>
 </template>

@@ -102,7 +102,18 @@ html {
   overflow-y: auto !important;
 }
 
-.theme--light.v-application code, .theme--dark.v-application code {
-  background-color: transparent !important;
+.spoiler {
+  padding: 0.1em;
+  border-radius: 0.1em;
+  color: transparent;
+  user-select: none;
+  background: #8888;
+  transition: all 0.1s;
+}
+
+.spoiler:hover {
+  color: inherit;
+  user-select: text;
+  background: #8888;
 }
 </style>

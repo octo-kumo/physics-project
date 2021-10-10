@@ -1,4 +1,5 @@
-const latex = require('@traptitech/markdown-it-katex')
+const latex = require('@traptitech/markdown-it-katex');
+const spoiler = require('@traptitech/markdown-it-spoiler');
 module.exports = {
     publicPath: '/physics-project/',
     transpileDependencies: [
@@ -20,7 +21,7 @@ module.exports = {
                                 linkify: true
                             },
                             plugins: [
-                                latex
+                                latex, spoiler
                             ]
                         }
                     }]

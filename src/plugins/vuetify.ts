@@ -4,7 +4,10 @@ import Vuetify from 'vuetify/lib/framework';
 import VueKinesis from 'vue-kinesis'
 // @ts-ignore
 import vuescroll from 'vue-scroll'
+// @ts-ignore
+import VueAos from 'vue-aos'
 
+Vue.use(VueAos);
 Vue.use(vuescroll, {debounce: 600});
 Vue.use(VueKinesis);
 Vue.use(Vuetify);

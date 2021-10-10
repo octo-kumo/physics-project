@@ -114,10 +114,8 @@
         <h3>Pretty Cool</h3>
         <p>That means if you have a looping coil of superconducting wires, and run a current through it, it will
           not lose energy even if we leave it there for years. This has been done and there were no measurable lose in
-          intensity of the current.</p>
-        <v-btn class="my-2" outlined to="magnet">This is however not the ideal zero resistance material of classical
-          physics.
-        </v-btn>
+          intensity of the current.<br>
+          <strong>This is however not the same as the ideal zero resistance material of classical physics.</strong></p>
         <p>But how is it possible for something to have zero resistance and why does the resistance suddenly
           drop to zero at a certain temperature?</p>
       </section>
@@ -181,15 +179,36 @@
       <section class="my-5 pa-5">
         <v-row id="flex-animation">
           <v-col cols="12" sm="6">
-            <MagnetExp1/>
+            <Flux id="flex-svg"/>
           </v-col>
           <v-col cols="12" sm="6">
-            <Flux id="flex-svg"/>
+            <MagnetExp1/>
+          </v-col>
+        </v-row>
+      </section>
+      <v-lazy class="my-5 pa-5">
+        <v-row>
+          <v-col cols="12" sm="6">
+            <scexp_t2/>
+          </v-col>
+          <v-col cols="12" sm="6">
+            <v-img
+                :src="$vuetify.theme.dark?require('@/assets/type_2.dark.png'):require('@/assets/type_2.png')"/>
+          </v-col>
+        </v-row>
+      </v-lazy>
+      <section class="my-5 pa-5">
+        <v-row>
+          <v-col cols="12" sm="6">
+            <Youtube videoId="Vxror-fnOL4"/>
+          </v-col>
+          <v-col cols="12" sm="6">
+            <scexp_flux_pin/>
           </v-col>
         </v-row>
       </section>
       <section class="my-5 pa-5">
-        <v-row id="flex-animation">
+        <v-row>
           <v-col cols="12" sm="8">
             <MagnetExp2/>
           </v-col>
@@ -199,7 +218,7 @@
         </v-row>
       </section>
       <section class="my-5 pa-5">
-        <v-row id="flex-animation">
+        <v-row>
           <v-col cols="12" sm="4">
             <svg viewBox="0 0 512 512" id="ripple-waves">
               <circle v-for="i in 12" :key="i" :r="i*16"
@@ -253,6 +272,8 @@ import scexp2 from '../markdowns/sc_exp_2.md';
 import scexp3 from '../markdowns/sc_exp_3.md';
 import scexp4 from '../markdowns/sc_exp_4.md';
 import scexpHalfSpin from '../markdowns/sc_exp_spin.md';
+import scexp_t2 from '../markdowns/sc_magnet_type_2.md';
+import scexp_flux_pin from '../markdowns/sc_magnet_flux_pin.md';
 import MagnetExp1 from '../markdowns/sc_magnet_1.md';
 import MagnetExp2 from '../markdowns/sc_magnet_2.md';
 import MagnetExp3 from '../markdowns/sc_magnet_3.md';
@@ -263,6 +284,7 @@ import Quiz from '../components/Quiz.vue';
 import ScrollMagic, {SceneProgressEvent} from 'scrollmagic';
 import {controller} from '../App.vue'
 import anime from 'animejs/lib/anime.es.js';
+import Youtube from "@/components/Youtube.vue";
 
 export default Vue.extend({
   name: 'Superconductor',
@@ -353,8 +375,9 @@ export default Vue.extend({
     ]
   }),
   components: {
+    Youtube,
     scbg,
-    scintro,
+    scintro, scexp_t2, scexp_flux_pin,
     scexp1, scexp2, scexp3, scexp4, Quiz,
     scexpHalfSpin,
     EnergyGraph, Flux,
