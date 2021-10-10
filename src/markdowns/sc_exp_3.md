@@ -12,7 +12,7 @@ The energy of the pairing interaction is quite weak, of the order of $10^{-3}\te
 
 Electrons have spin$\frac12$, so they are fermions, but the total spin of a **Cooper pair** is integer (0 or 1) so it is a composite **boson**. Therefore, unlike electrons, multiple Cooper pairs are allowed to be in the **same quantum state**.
 
-Hence cooper pairs can, and have the tendency of collapsing into the same **ground state**.
+Hence cooper pairs can, and will collapse into the same **ground state**.
 
 > *The idea of paired electrons, though not fully accurate, captures the sense of it*
 

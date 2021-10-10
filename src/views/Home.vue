@@ -17,6 +17,8 @@
     <v-container class="pt-5">
       <HomeIntro/>
       <v-divider class="my-10"/>
+      <Youtube video-id="dQw4w9WgXcQ"></Youtube>
+      <v-divider class="my-10"/>
       <h2 class="text-center">Pages</h2>
       <v-row class="pa-10">
         <v-col cols="12" sm="6" md="4" v-for="page in pages" :key="page.sid" style="width:50%">
@@ -39,9 +41,9 @@
       <h2 class="text-center">Credits</h2>
       <v-row class="pa-10">
         <v-col cols="12" sm="6" md="4" v-for="person in authors" :key="person.sid" style="width:50%">
-          <vue-aos animation-class="fadeIn animated">
-            <kinesis-container event="move">
-              <kinesis-element type="depth" :strength="5">
+          <kinesis-container event="move">
+            <kinesis-element type="depth" :strength="5">
+              <vue-aos animation-class="fadeIn animated">
                 <v-card>
                   <v-list-item three-line>
                     <v-list-item-content>
@@ -78,9 +80,9 @@
                     </kinesis-element>
                   </v-chip-group>
                 </v-card>
-              </kinesis-element>
-            </kinesis-container>
-          </vue-aos>
+              </vue-aos>
+            </kinesis-element>
+          </kinesis-container>
         </v-col>
       </v-row>
     </v-container>
@@ -93,6 +95,7 @@ import HomeIntro from '../markdowns/foreword.md'
 import SystemOne from '../assets/system_one.svg'
 import anime from "animejs";
 import {RouteRecordPublic} from "vue-router";
+import Youtube from "@/components/Youtube.vue";
 
 export default Vue.extend({
   name: "Home",
@@ -143,6 +146,7 @@ export default Vue.extend({
     }]
   }),
   components: {
+    Youtube,
     HomeIntro, SystemOne
   },
   computed: {
